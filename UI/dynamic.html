@@ -1,0 +1,3289 @@
+<head>
+	<link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+	<script src="semantic/dist/semantic.min.js"></script>
+	<style>
+		.ui.mini.circular.labels .ui.label{
+			margin-right:0em;
+		}
+		.ui.tiny.header{
+			margin-bottom:.2em;
+		}
+		.ui.teal.basic.tiny.label{
+			margin-bottom:.5em
+		}
+	</style>
+	<script>
+		$(document).ready(function() {
+			$(".rating").rating('disable');
+			$(".progress").progress();
+			$('tr td:first-child').click(function(){
+				var is = [['grey','radio'],['green','checkmark']]
+				var c = this.children[0].children[0].classList
+				var its = c.contains(...is[0])
+				c.remove(...is[+!its])
+				c.add(...is[+its])
+				$(this).closest('tr').toggleClass('positive')
+			})
+		});
+	</script>
+</head>
+
+<body>
+	<div class="ui container">
+		<table class="ui sortable striped selectable single line celled table">
+			<thead>
+				<tr>
+					<th>Section #</th>
+					<th>Instructor</th>
+					<th>Rating</th>
+					<th class="three wide">Status</th>
+					<th>Schedule</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<!-- Code -->
+					<td>
+						<div class="ui header">
+							<i class="grey radio icon"></i>
+							01
+						</div>
+					</td>
+					<!-- Instructor -->
+					<td>
+						
+						<a href="https://web.byui.edu/Directory/Employee/spackmanr" class="ui header" target="_blank">
+							Spackman
+							<div class="sub header">
+								Ross<i class="small linkify icon"></i>
+							</div>
+						</a>
+						
+						
+					</td>
+					<!-- Rating -->
+					<td>
+						
+						
+						<div class="ui rating" data-rating="4" data-max-rating="5"></div>
+						<br/>
+						<a class="header" href="http://www.ratemyprofessors.com/ShowRatings.jsp?tid=1966168" target="_blank">14 reviews</a>
+						
+					</td>
+					<!-- Status -->
+					<td class="center aligned">
+						<div class="item">
+							
+							<div class="ui teal basic tiny label">Closed</div>
+							<div class="ui small disabled teal progress" data-value="28" data-total="24">
+								<div class="bar"></div>
+								<div class="label">28 of 24 filled</div>
+							</div>
+						</div>
+					</td>
+					<!-- Schedule -->
+					<td>
+						
+						<div class="ui tiny header">
+								7:45 - 8:45 AM
+							<div class="sub header">
+								STC 341 | Lecture
+							</div>
+						</div>
+						<div class="ui mini circular labels">
+							<div class="ui teal label">M</div>
+							<div class="ui label">Tu</div>
+							<div class="ui teal label">W</div>
+							<div class="ui label">Th</div>
+							<div class="ui teal label">F</div>
+							<div class="ui label">S</div>
+						</div>
+						
+						<div class="ui tiny header">
+								7:45 - 9:45 AM
+							<div class="sub header">
+								STC 275 Forage | Lab
+							</div>
+						</div>
+						<div class="ui mini circular labels">
+							<div class="ui label">M</div>
+							<div class="ui teal label">Tu</div>
+							<div class="ui label">W</div>
+							<div class="ui label">Th</div>
+							<div class="ui label">F</div>
+							<div class="ui label">S</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<!-- Code -->
+					<td>
+						<div class="ui header">
+							<i class="grey radio icon"></i>
+							02
+						</div>
+					</td>
+					<!-- Instructor -->
+					<td>
+						
+						<a href="https://web.byui.edu/Directory/Employee/spackmanr" class="ui header" target="_blank">
+							Spackman
+							<div class="sub header">
+								Ross<i class="small linkify icon"></i>
+							</div>
+						</a>
+						
+						
+					</td>
+					<!-- Rating -->
+					<td>
+						
+						
+						<div class="ui rating" data-rating="4" data-max-rating="5"></div>
+						<br/>
+						<a class="header" href="http://www.ratemyprofessors.com/ShowRatings.jsp?tid=1966168" target="_blank">14 reviews</a>
+						
+					</td>
+					<!-- Status -->
+					<td class="center aligned">
+						<div class="item">
+							
+							<div class="ui teal basic tiny label">Closed</div>
+							<div class="ui small disabled teal progress" data-value="27" data-total="24">
+								<div class="bar"></div>
+								<div class="label">27 of 24 filled</div>
+							</div>
+						</div>
+					</td>
+					<!-- Schedule -->
+					<td>
+						
+						<div class="ui tiny header">
+								7:45 - 9:45 AM
+							<div class="sub header">
+								STC 341 | Lab
+							</div>
+						</div>
+						<div class="ui mini circular labels">
+							<div class="ui label">M</div>
+							<div class="ui label">Tu</div>
+							<div class="ui label">W</div>
+							<div class="ui teal label">Th</div>
+							<div class="ui label">F</div>
+							<div class="ui label">S</div>
+						</div>
+						
+						<div class="ui tiny header">
+								7:45 - 8:45 AM
+							<div class="sub header">
+								STC 275 Forage | Lecture
+							</div>
+						</div>
+						<div class="ui mini circular labels">
+							<div class="ui teal label">M</div>
+							<div class="ui label">Tu</div>
+							<div class="ui teal label">W</div>
+							<div class="ui label">Th</div>
+							<div class="ui teal label">F</div>
+							<div class="ui label">S</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<!-- Code -->
+					<td>
+						<div class="ui header">
+							<i class="grey radio icon"></i>
+							01
+						</div>
+					</td>
+					<!-- Instructor -->
+					<td>
+						
+						<a href="https://web.byui.edu/Directory/Employee/williamsj" class="ui header" target="_blank">
+							Williams
+							<div class="sub header">
+								Jared<i class="small linkify icon"></i>
+							</div>
+						</a>
+						
+						
+					</td>
+					<!-- Rating -->
+					<td>
+						
+						
+						<div class="ui rating" data-rating="4" data-max-rating="5"></div>
+						<br/>
+						<a class="header" href="http://www.ratemyprofessors.com/ShowRatings.jsp?tid=1030551" target="_blank">18 reviews</a>
+						
+					</td>
+					<!-- Status -->
+					<td class="center aligned">
+						<div class="item">
+							
+							<div class="ui small teal progress" data-value="50" data-total="55">
+								<div class="bar"></div>
+								<div class="label">50 of 55 filled</div>
+							</div>
+						</div>
+					</td>
+					<!-- Schedule -->
+					<td>
+						
+						<div class="ui tiny header">
+								9:00 - 10:00 AM
+							<div class="sub header">
+								STC 341 | Lecture
+							</div>
+						</div>
+						<div class="ui mini circular labels">
+							<div class="ui teal label">M</div>
+							<div class="ui label">Tu</div>
+							<div class="ui teal label">W</div>
+							<div class="ui label">Th</div>
+							<div class="ui teal label">F</div>
+							<div class="ui label">S</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<!-- Code -->
+					<td>
+						<div class="ui header">
+							<i class="grey radio icon"></i>
+							01
+						</div>
+					</td>
+					<!-- Instructor -->
+					<td>
+						
+						<a href="https://web.byui.edu/Directory/Employee/williamsj" class="ui header" target="_blank">
+							Williams
+							<div class="sub header">
+								Jared<i class="small linkify icon"></i>
+							</div>
+						</a>
+						
+						
+					</td>
+					<!-- Rating -->
+					<td>
+						
+						
+						<div class="ui rating" data-rating="4" data-max-rating="5"></div>
+						<br/>
+						<a class="header" href="http://www.ratemyprofessors.com/ShowRatings.jsp?tid=1030551" target="_blank">18 reviews</a>
+						
+					</td>
+					<!-- Status -->
+					<td class="center aligned">
+						<div class="item">
+							
+							<div class="ui teal basic tiny label">Closed</div>
+							<div class="ui small disabled teal progress" data-value="24" data-total="24">
+								<div class="bar"></div>
+								<div class="label">24 of 24 filled</div>
+							</div>
+						</div>
+					</td>
+					<!-- Schedule -->
+					<td>
+						
+						<div class="ui tiny header">
+								10:30AM - 12:30 PM
+							<div class="sub header">
+								STC 261 | Lab
+							</div>
+						</div>
+						<div class="ui mini circular labels">
+							<div class="ui label">M</div>
+							<div class="ui teal label">Tu</div>
+							<div class="ui label">W</div>
+							<div class="ui label">Th</div>
+							<div class="ui label">F</div>
+							<div class="ui label">S</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<!-- Code -->
+					<td>
+						<div class="ui header">
+							<i class="grey radio icon"></i>
+							02
+						</div>
+					</td>
+					<!-- Instructor -->
+					<td>
+						
+						<a href="https://web.byui.edu/Directory/Employee/willisb" class="ui header" target="_blank">
+							Willis
+							<div class="sub header">
+								Blake<i class="small linkify icon"></i>
+							</div>
+						</a>
+						
+						
+					</td>
+					<!-- Rating -->
+					<td>
+						
+						
+						<div class="ui rating" data-rating="4" data-max-rating="5"></div>
+						<br/>
+						<a class="header" href="http://www.ratemyprofessors.com/ShowRatings.jsp?tid=310086" target="_blank">38 reviews</a>
+						
+					</td>
+					<!-- Status -->
+					<td class="center aligned">
+						<div class="item">
+							
+							<div class="ui small teal progress" data-value="15" data-total="24">
+								<div class="bar"></div>
+								<div class="label">15 of 24 filled</div>
+							</div>
+						</div>
+					</td>
+					<!-- Schedule -->
+					<td>
+						
+						<div class="ui tiny header">
+								8:00 - 10:00 AM
+							<div class="sub header">
+								STC 261 | Lab
+							</div>
+						</div>
+						<div class="ui mini circular labels">
+							<div class="ui label">M</div>
+							<div class="ui teal label">Tu</div>
+							<div class="ui label">W</div>
+							<div class="ui label">Th</div>
+							<div class="ui label">F</div>
+							<div class="ui label">S</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<!-- Code -->
+					<td>
+						<div class="ui header">
+							<i class="grey radio icon"></i>
+							03
+						</div>
+					</td>
+					<!-- Instructor -->
+					<td>
+						
+						<a href="https://web.byui.edu/Directory/Employee/willisb" class="ui header" target="_blank">
+							Willis
+							<div class="sub header">
+								Blake<i class="small linkify icon"></i>
+							</div>
+						</a>
+						
+						
+					</td>
+					<!-- Rating -->
+					<td>
+						
+						
+						<div class="ui rating" data-rating="4" data-max-rating="5"></div>
+						<br/>
+						<a class="header" href="http://www.ratemyprofessors.com/ShowRatings.jsp?tid=310086" target="_blank">38 reviews</a>
+						
+					</td>
+					<!-- Status -->
+					<td class="center aligned">
+						<div class="item">
+							
+							<div class="ui small teal progress" data-value="5" data-total="24">
+								<div class="bar"></div>
+								<div class="label">5 of 24 filled</div>
+							</div>
+						</div>
+					</td>
+					<!-- Schedule -->
+					<td>
+						
+						<div class="ui tiny header">
+								9:00 - 11:00 AM
+							<div class="sub header">
+								STC 261 | Lab
+							</div>
+						</div>
+						<div class="ui mini circular labels">
+							<div class="ui label">M</div>
+							<div class="ui label">Tu</div>
+							<div class="ui label">W</div>
+							<div class="ui teal label">Th</div>
+							<div class="ui label">F</div>
+							<div class="ui label">S</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<!-- Code -->
+					<td>
+						<div class="ui header">
+							<i class="grey radio icon"></i>
+							01
+						</div>
+					</td>
+					<!-- Instructor -->
+					<td>
+						
+						<a href="https://web.byui.edu/Directory/Employee/tollj" class="ui header" target="_blank">
+							Toll
+							<div class="sub header">
+								Jerry<i class="small linkify icon"></i>
+							</div>
+						</a>
+						
+						
+					</td>
+					<!-- Rating -->
+					<td>
+						
+						
+						<div class="ui rating" data-rating="4" data-max-rating="5"></div>
+						<br/>
+						<a class="header" href="http://www.ratemyprofessors.com/ShowRatings.jsp?tid=967318" target="_blank">16 reviews</a>
+						
+					</td>
+					<!-- Status -->
+					<td class="center aligned">
+						<div class="item">
+							
+							<div class="ui teal basic tiny label">Closed</div>
+							<div class="ui small disabled teal progress" data-value="38" data-total="38">
+								<div class="bar"></div>
+								<div class="label">38 of 38 filled</div>
+							</div>
+						</div>
+					</td>
+					<!-- Schedule -->
+					<td>
+						
+						<div class="ui tiny header">
+								10:15AM - 12:15 PM
+							<div class="sub header">
+								STC 295 | Lecture
+							</div>
+						</div>
+						<div class="ui mini circular labels">
+							<div class="ui label">M</div>
+							<div class="ui teal label">Tu</div>
+							<div class="ui label">W</div>
+							<div class="ui label">Th</div>
+							<div class="ui label">F</div>
+							<div class="ui label">S</div>
+						</div>
+						
+						<div class="ui tiny header">
+								10:15AM - 12:15 PM
+							<div class="sub header">
+								STC 295 | Lab
+							</div>
+						</div>
+						<div class="ui mini circular labels">
+							<div class="ui label">M</div>
+							<div class="ui label">Tu</div>
+							<div class="ui label">W</div>
+							<div class="ui teal label">Th</div>
+							<div class="ui label">F</div>
+							<div class="ui label">S</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<!-- Code -->
+					<td>
+						<div class="ui header">
+							<i class="grey radio icon"></i>
+							01
+						</div>
+					</td>
+					<!-- Instructor -->
+					<td>
+						
+						<a href="https://web.byui.edu/Directory/Employees/NameLastFirst/Romney,Benjamin" class="ui header" target="_blank">
+							Romney
+							<div class="sub header">
+								Benjamin
+							</div>
+						</a>
+						
+						
+					</td>
+					<!-- Rating -->
+					<td>
+						
+						
+						<div class="ui rating" data-rating="5" data-max-rating="5"></div>
+						<br/>
+						<a class="header" href="http://www.ratemyprofessors.com/ShowRatings.jsp?tid=180258" target="_blank">11 reviews</a>
+						
+					</td>
+					<!-- Status -->
+					<td class="center aligned">
+						<div class="item">
+							
+							<div class="ui small teal progress" data-value="12" data-total="24">
+								<div class="bar"></div>
+								<div class="label">12 of 24 filled</div>
+							</div>
+						</div>
+					</td>
+					<!-- Schedule -->
+					<td>
+						
+						<div class="ui tiny header">
+								Arranged
+							<div class="sub header">
+								Guided Instruction
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<!-- Code -->
+					<td>
+						<div class="ui header">
+							<i class="grey radio icon"></i>
+							02
+						</div>
+					</td>
+					<!-- Instructor -->
+					<td>
+						
+						<a href="https://web.byui.edu/Directory/Employee/nelsonre" class="ui header" target="_blank">
+							Nelson
+							<div class="sub header">
+								Reese<i class="small linkify icon"></i>
+							</div>
+						</a>
+						
+						
+					</td>
+					<!-- Rating -->
+					<td>
+						
+						
+						<div class="ui rating" data-rating="4" data-max-rating="5"></div>
+						<br/>
+						<a class="header" href="http://www.ratemyprofessors.com/ShowRatings.jsp?tid=1127716" target="_blank">31 reviews</a>
+						
+					</td>
+					<!-- Status -->
+					<td class="center aligned">
+						<div class="item">
+							
+							<div class="ui small teal progress" data-value="1" data-total="24">
+								<div class="bar"></div>
+								<div class="label">1 of 24 filled</div>
+							</div>
+						</div>
+					</td>
+					<!-- Schedule -->
+					<td>
+						
+						<div class="ui tiny header">
+								Arranged
+							<div class="sub header">
+								Guided Instruction
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<!-- Code -->
+					<td>
+						<div class="ui header">
+							<i class="grey radio icon"></i>
+							03
+						</div>
+					</td>
+					<!-- Instructor -->
+					<td>
+						
+						<a href="https://web.byui.edu/Directory/Employees/NameLastFirst/Humphreys,Christopher" class="ui header" target="_blank">
+							Humphreys
+							<div class="sub header">
+								Christopher
+							</div>
+						</a>
+						
+						
+					</td>
+					<!-- Rating -->
+					<td>
+						
+						
+						<a class="header" href="http://www.ratemyprofessors.com/search.jsp?queryoption=HEADER&queryBy=teacherName&schoolName=Brigham+Young+University-Idaho&schoolID=1754&query=Christopher%20Humphreys" target="_blank">
+							<div class="ui rating" data-rating="0" data-max-rating="5"></div>
+						</a>
+						
+						
+					</td>
+					<!-- Status -->
+					<td class="center aligned">
+						<div class="item">
+							
+							<div class="ui small teal progress" data-value="0" data-total="24">
+								<div class="bar"></div>
+								<div class="label">0 of 24 filled</div>
+							</div>
+						</div>
+					</td>
+					<!-- Schedule -->
+					<td>
+						
+						<div class="ui tiny header">
+								11:30AM - 1:30 PM
+							<div class="sub header">
+								STC 261 | Guided Instruction
+							</div>
+						</div>
+						<div class="ui mini circular labels">
+							<div class="ui label">M</div>
+							<div class="ui label">Tu</div>
+							<div class="ui teal label">W</div>
+							<div class="ui label">Th</div>
+							<div class="ui label">F</div>
+							<div class="ui label">S</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<!-- Code -->
+					<td>
+						<div class="ui header">
+							<i class="grey radio icon"></i>
+							01
+						</div>
+					</td>
+					<!-- Instructor -->
+					<td>
+						
+						<a href="https://web.byui.edu/Directory/Employee/willisb" class="ui header" target="_blank">
+							Willis
+							<div class="sub header">
+								Blake<i class="small linkify icon"></i>
+							</div>
+						</a>
+						
+						
+					</td>
+					<!-- Rating -->
+					<td>
+						
+						
+						<div class="ui rating" data-rating="4" data-max-rating="5"></div>
+						<br/>
+						<a class="header" href="http://www.ratemyprofessors.com/ShowRatings.jsp?tid=310086" target="_blank">38 reviews</a>
+						
+					</td>
+					<!-- Status -->
+					<td class="center aligned">
+						<div class="item">
+							
+							<div class="ui small teal progress" data-value="65" data-total="70">
+								<div class="bar"></div>
+								<div class="label">65 of 70 filled</div>
+							</div>
+						</div>
+					</td>
+					<!-- Schedule -->
+					<td>
+						
+						<div class="ui tiny header">
+								12:45 - 1:45 PM
+							<div class="sub header">
+								STC 341 | Lecture
+							</div>
+						</div>
+						<div class="ui mini circular labels">
+							<div class="ui label">M</div>
+							<div class="ui teal label">Tu</div>
+							<div class="ui label">W</div>
+							<div class="ui label">Th</div>
+							<div class="ui label">F</div>
+							<div class="ui label">S</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<!-- Code -->
+					<td>
+						<div class="ui header">
+							<i class="grey radio icon"></i>
+							01
+						</div>
+					</td>
+					<!-- Instructor -->
+					<td>
+						
+						<a href="https://web.byui.edu/Directory/Employee/williamsj" class="ui header" target="_blank">
+							Williams
+							<div class="sub header">
+								Jared<i class="small linkify icon"></i>
+							</div>
+						</a>
+						
+						
+					</td>
+					<!-- Rating -->
+					<td>
+						
+						
+						<div class="ui rating" data-rating="4" data-max-rating="5"></div>
+						<br/>
+						<a class="header" href="http://www.ratemyprofessors.com/ShowRatings.jsp?tid=1030551" target="_blank">18 reviews</a>
+						
+					</td>
+					<!-- Status -->
+					<td class="center aligned">
+						<div class="item">
+							
+							<div class="ui small teal progress" data-value="3" data-total="28">
+								<div class="bar"></div>
+								<div class="label">3 of 28 filled</div>
+							</div>
+						</div>
+					</td>
+					<!-- Schedule -->
+					<td>
+						
+						<div class="ui tiny header">
+								9:00 - 10:00 AM
+							<div class="sub header">
+								STC 320P | Lecture
+							</div>
+						</div>
+						<div class="ui mini circular labels">
+							<div class="ui label">M</div>
+							<div class="ui label">Tu</div>
+							<div class="ui label">W</div>
+							<div class="ui teal label">Th</div>
+							<div class="ui label">F</div>
+							<div class="ui label">S</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<!-- Code -->
+					<td>
+						<div class="ui header">
+							<i class="grey radio icon"></i>
+							01
+						</div>
+					</td>
+					<!-- Instructor -->
+					<td>
+						
+						<a href="https://web.byui.edu/Directory/Employees/NameLastFirst/Romney,Benjamin" class="ui header" target="_blank">
+							Romney
+							<div class="sub header">
+								Benjamin
+							</div>
+						</a>
+						
+						
+					</td>
+					<!-- Rating -->
+					<td>
+						
+						
+						<div class="ui rating" data-rating="5" data-max-rating="5"></div>
+						<br/>
+						<a class="header" href="http://www.ratemyprofessors.com/ShowRatings.jsp?tid=180258" target="_blank">11 reviews</a>
+						
+					</td>
+					<!-- Status -->
+					<td class="center aligned">
+						<div class="item">
+							
+							<div class="ui small teal progress" data-value="9" data-total="99">
+								<div class="bar"></div>
+								<div class="label">9 of 99 filled</div>
+							</div>
+						</div>
+					</td>
+					<!-- Schedule -->
+					<td>
+						
+						<div class="ui tiny header">
+								Arranged
+							<div class="sub header">
+								Internship
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<!-- Code -->
+					<td>
+						<div class="ui header">
+							<i class="grey radio icon"></i>
+							02
+						</div>
+					</td>
+					<!-- Instructor -->
+					<td>
+						
+						<a href="https://web.byui.edu/Directory/Employee/nelsonre" class="ui header" target="_blank">
+							Nelson
+							<div class="sub header">
+								Reese<i class="small linkify icon"></i>
+							</div>
+						</a>
+						
+						
+					</td>
+					<!-- Rating -->
+					<td>
+						
+						
+						<div class="ui rating" data-rating="4" data-max-rating="5"></div>
+						<br/>
+						<a class="header" href="http://www.ratemyprofessors.com/ShowRatings.jsp?tid=1127716" target="_blank">31 reviews</a>
+						
+					</td>
+					<!-- Status -->
+					<td class="center aligned">
+						<div class="item">
+							
+							<div class="ui small teal progress" data-value="4" data-total="99">
+								<div class="bar"></div>
+								<div class="label">4 of 99 filled</div>
+							</div>
+						</div>
+					</td>
+					<!-- Schedule -->
+					<td>
+						
+						<div class="ui tiny header">
+								Arranged
+							<div class="sub header">
+								Internship
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<!-- Code -->
+					<td>
+						<div class="ui header">
+							<i class="grey radio icon"></i>
+							01
+						</div>
+					</td>
+					<!-- Instructor -->
+					<td>
+						
+						<a href="https://web.byui.edu/Directory/Employee/nelsonre" class="ui header" target="_blank">
+							Nelson
+							<div class="sub header">
+								Reese<i class="small linkify icon"></i>
+							</div>
+						</a>
+						
+						
+					</td>
+					<!-- Rating -->
+					<td>
+						
+						
+						<div class="ui rating" data-rating="4" data-max-rating="5"></div>
+						<br/>
+						<a class="header" href="http://www.ratemyprofessors.com/ShowRatings.jsp?tid=1127716" target="_blank">31 reviews</a>
+						
+					</td>
+					<!-- Status -->
+					<td class="center aligned">
+						<div class="item">
+							
+							<div class="ui small teal progress" data-value="35" data-total="38">
+								<div class="bar"></div>
+								<div class="label">35 of 38 filled</div>
+							</div>
+						</div>
+					</td>
+					<!-- Schedule -->
+					<td>
+						
+						<div class="ui tiny header">
+								7:45 - 9:45 AM
+							<div class="sub header">
+								Benson 236 Soils Lab | Lab
+							</div>
+						</div>
+						<div class="ui mini circular labels">
+							<div class="ui label">M</div>
+							<div class="ui label">Tu</div>
+							<div class="ui label">W</div>
+							<div class="ui teal label">Th</div>
+							<div class="ui label">F</div>
+							<div class="ui label">S</div>
+						</div>
+						
+						<div class="ui tiny header">
+								7:45 - 8:45 AM
+							<div class="sub header">
+								Benson 236 Soils Lab | Lecture
+							</div>
+						</div>
+						<div class="ui mini circular labels">
+							<div class="ui label">M</div>
+							<div class="ui teal label">Tu</div>
+							<div class="ui label">W</div>
+							<div class="ui label">Th</div>
+							<div class="ui label">F</div>
+							<div class="ui label">S</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<!-- Code -->
+					<td>
+						<div class="ui header">
+							<i class="grey radio icon"></i>
+							01
+						</div>
+					</td>
+					<!-- Instructor -->
+					<td>
+						
+						<a href="https://web.byui.edu/Directory/Employee/hansenn" class="ui header" target="_blank">
+							Hansen
+							<div class="sub header">
+								Nels<i class="small linkify icon"></i>
+							</div>
+						</a>
+						
+						
+					</td>
+					<!-- Rating -->
+					<td>
+						
+						
+						<div class="ui rating" data-rating="5" data-max-rating="5"></div>
+						<br/>
+						<a class="header" href="http://www.ratemyprofessors.com/ShowRatings.jsp?tid=1864665" target="_blank">3 reviews</a>
+						
+					</td>
+					<!-- Status -->
+					<td class="center aligned">
+						<div class="item">
+							
+							<div class="ui small teal progress" data-value="8" data-total="24">
+								<div class="bar"></div>
+								<div class="label">8 of 24 filled</div>
+							</div>
+						</div>
+					</td>
+					<!-- Schedule -->
+					<td>
+						
+						<div class="ui tiny header">
+								9:00 - 10:00 AM
+							<div class="sub header">
+								STC 295 | Lecture
+							</div>
+						</div>
+						<div class="ui mini circular labels">
+							<div class="ui teal label">M</div>
+							<div class="ui label">Tu</div>
+							<div class="ui label">W</div>
+							<div class="ui label">Th</div>
+							<div class="ui teal label">F</div>
+							<div class="ui label">S</div>
+						</div>
+						
+						<div class="ui tiny header">
+								9:00 - 11:00 AM
+							<div class="sub header">
+								STC 275 Forage | Lab
+							</div>
+						</div>
+						<div class="ui mini circular labels">
+							<div class="ui label">M</div>
+							<div class="ui label">Tu</div>
+							<div class="ui teal label">W</div>
+							<div class="ui label">Th</div>
+							<div class="ui label">F</div>
+							<div class="ui label">S</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<!-- Code -->
+					<td>
+						<div class="ui header">
+							<i class="grey radio icon"></i>
+							01
+						</div>
+					</td>
+					<!-- Instructor -->
+					<td>
+						
+						<a href="https://web.byui.edu/Directory/Employee/jensenga" class="ui header" target="_blank">
+							Jensen
+							<div class="sub header">
+								Garth<i class="small linkify icon"></i>
+							</div>
+						</a>
+						
+						
+					</td>
+					<!-- Rating -->
+					<td>
+						
+						
+						<div class="ui rating" data-rating="3" data-max-rating="5"></div>
+						<br/>
+						<a class="header" href="http://www.ratemyprofessors.com/ShowRatings.jsp?tid=688203" target="_blank">24 reviews</a>
+						
+					</td>
+					<!-- Status -->
+					<td class="center aligned">
+						<div class="item">
+							
+							<div class="ui small teal progress" data-value="144" data-total="150">
+								<div class="bar"></div>
+								<div class="label">144 of 150 filled</div>
+							</div>
+						</div>
+					</td>
+					<!-- Schedule -->
+					<td>
+						
+						<div class="ui tiny header">
+								7:45 - 8:45 AM
+							<div class="sub header">
+								Austin 105 Lecture Hall | Lecture
+							</div>
+						</div>
+						<div class="ui mini circular labels">
+							<div class="ui label">M</div>
+							<div class="ui label">Tu</div>
+							<div class="ui label">W</div>
+							<div class="ui label">Th</div>
+							<div class="ui teal label">F</div>
+							<div class="ui label">S</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<!-- Code -->
+					<td>
+						<div class="ui header">
+							<i class="grey radio icon"></i>
+							01
+						</div>
+					</td>
+					<!-- Instructor -->
+					<td>
+						
+						<a href="https://web.byui.edu/Directory/Employees/NameLastFirst/Huish,Patrick" class="ui header" target="_blank">
+							Huish
+							<div class="sub header">
+								Patrick
+							</div>
+						</a>
+						
+						
+					</td>
+					<!-- Rating -->
+					<td>
+						
+						
+						<div class="ui rating" data-rating="5" data-max-rating="5"></div>
+						<br/>
+						<a class="header" href="http://www.ratemyprofessors.com/ShowRatings.jsp?tid=925118" target="_blank">10 reviews</a>
+						
+					</td>
+					<!-- Status -->
+					<td class="center aligned">
+						<div class="item">
+							
+							<div class="ui small teal progress" data-value="22" data-total="31">
+								<div class="bar"></div>
+								<div class="label">22 of 31 filled</div>
+							</div>
+						</div>
+					</td>
+					<!-- Schedule -->
+					<td>
+						
+						<div class="ui tiny header">
+								12:45 - 2:45 PM
+							<div class="sub header">
+								Austin 147 Drafting Lab | Lecture
+							</div>
+						</div>
+						<div class="ui mini circular labels">
+							<div class="ui teal label">M</div>
+							<div class="ui label">Tu</div>
+							<div class="ui label">W</div>
+							<div class="ui label">Th</div>
+							<div class="ui label">F</div>
+							<div class="ui label">S</div>
+						</div>
+						
+						<div class="ui tiny header">
+								1:15 - 2:45 PM
+							<div class="sub header">
+								Austin 147 Drafting Lab | Lab
+							</div>
+						</div>
+						<div class="ui mini circular labels">
+							<div class="ui label">M</div>
+							<div class="ui label">Tu</div>
+							<div class="ui teal label">W</div>
+							<div class="ui label">Th</div>
+							<div class="ui teal label">F</div>
+							<div class="ui label">S</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<!-- Code -->
+					<td>
+						<div class="ui header">
+							<i class="grey radio icon"></i>
+							01
+						</div>
+					</td>
+					<!-- Instructor -->
+					<td>
+						
+						<a href="https://web.byui.edu/Directory/Employee/jensenga" class="ui header" target="_blank">
+							Jensen
+							<div class="sub header">
+								Garth<i class="small linkify icon"></i>
+							</div>
+						</a>
+						
+						
+					</td>
+					<!-- Rating -->
+					<td>
+						
+						
+						<div class="ui rating" data-rating="3" data-max-rating="5"></div>
+						<br/>
+						<a class="header" href="http://www.ratemyprofessors.com/ShowRatings.jsp?tid=688203" target="_blank">24 reviews</a>
+						
+					</td>
+					<!-- Status -->
+					<td class="center aligned">
+						<div class="item">
+							
+							<div class="ui teal basic tiny label">Closed</div>
+							<div class="ui small disabled teal progress" data-value="24" data-total="24">
+								<div class="bar"></div>
+								<div class="label">24 of 24 filled</div>
+							</div>
+						</div>
+					</td>
+					<!-- Schedule -->
+					<td>
+						
+						<div class="ui tiny header">
+								12:45 - 2:45 PM
+							<div class="sub header">
+								Austin 145 Design Lab | Lecture
+							</div>
+						</div>
+						<div class="ui mini circular labels">
+							<div class="ui teal label">M</div>
+							<div class="ui label">Tu</div>
+							<div class="ui label">W</div>
+							<div class="ui label">Th</div>
+							<div class="ui label">F</div>
+							<div class="ui label">S</div>
+						</div>
+						
+						<div class="ui tiny header">
+								12:45 - 2:45 PM
+							<div class="sub header">
+								Austin 145 Design Lab | Lab
+							</div>
+						</div>
+						<div class="ui mini circular labels">
+							<div class="ui label">M</div>
+							<div class="ui label">Tu</div>
+							<div class="ui teal label">W</div>
+							<div class="ui label">Th</div>
+							<div class="ui teal label">F</div>
+							<div class="ui label">S</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<!-- Code -->
+					<td>
+						<div class="ui header">
+							<i class="grey radio icon"></i>
+							01
+						</div>
+					</td>
+					<!-- Instructor -->
+					<td>
+						
+						<a href="https://web.byui.edu/Directory/Employees/NameLastFirst/Allen,Charles" class="ui header" target="_blank">
+							Allen
+							<div class="sub header">
+								Charles
+							</div>
+						</a>
+						
+						
+					</td>
+					<!-- Rating -->
+					<td>
+						
+						
+						<a class="header" href="http://www.ratemyprofessors.com/search.jsp?queryoption=HEADER&queryBy=teacherName&schoolName=Brigham+Young+University-Idaho&schoolID=1754&query=Charles%20Allen" target="_blank">
+							<div class="ui rating" data-rating="0" data-max-rating="5"></div>
+						</a>
+						
+						
+					</td>
+					<!-- Status -->
+					<td class="center aligned">
+						<div class="item">
+							
+							<div class="ui small teal progress" data-value="39" data-total="40">
+								<div class="bar"></div>
+								<div class="label">39 of 40 filled</div>
+							</div>
+						</div>
+					</td>
+					<!-- Schedule -->
+					<td>
+						
+						<div class="ui tiny header">
+								9:00 - 11:15 AM
+							<div class="sub header">
+								Austin 147 Drafting Lab | Lab
+							</div>
+						</div>
+						<div class="ui mini circular labels">
+							<div class="ui label">M</div>
+							<div class="ui teal label">Tu</div>
+							<div class="ui label">W</div>
+							<div class="ui teal label">Th</div>
+							<div class="ui label">F</div>
+							<div class="ui label">S</div>
+						</div>
+						
+						<div class="ui tiny header">
+								7:45 - 8:45 AM
+							<div class="sub header">
+								Austin 147 Drafting Lab | Lecture
+							</div>
+						</div>
+						<div class="ui mini circular labels">
+							<div class="ui label">M</div>
+							<div class="ui teal label">Tu</div>
+							<div class="ui label">W</div>
+							<div class="ui teal label">Th</div>
+							<div class="ui label">F</div>
+							<div class="ui label">S</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<!-- Code -->
+					<td>
+						<div class="ui header">
+							<i class="grey radio icon"></i>
+							02
+						</div>
+					</td>
+					<!-- Instructor -->
+					<td>
+						
+						<a href="https://web.byui.edu/Directory/Employees/NameLastFirst/Allen,Charles" class="ui header" target="_blank">
+							Allen
+							<div class="sub header">
+								Charles
+							</div>
+						</a>
+						
+						
+					</td>
+					<!-- Rating -->
+					<td>
+						
+						
+						<a class="header" href="http://www.ratemyprofessors.com/search.jsp?queryoption=HEADER&queryBy=teacherName&schoolName=Brigham+Young+University-Idaho&schoolID=1754&query=Charles%20Allen" target="_blank">
+							<div class="ui rating" data-rating="0" data-max-rating="5"></div>
+						</a>
+						
+						
+					</td>
+					<!-- Status -->
+					<td class="center aligned">
+						<div class="item">
+							
+							<div class="ui small teal progress" data-value="38" data-total="40">
+								<div class="bar"></div>
+								<div class="label">38 of 40 filled</div>
+							</div>
+						</div>
+					</td>
+					<!-- Schedule -->
+					<td>
+						
+						<div class="ui tiny header">
+								11:30AM - 12:30 PM
+							<div class="sub header">
+								Austin 147 Drafting Lab | Lecture
+							</div>
+						</div>
+						<div class="ui mini circular labels">
+							<div class="ui label">M</div>
+							<div class="ui teal label">Tu</div>
+							<div class="ui label">W</div>
+							<div class="ui teal label">Th</div>
+							<div class="ui label">F</div>
+							<div class="ui label">S</div>
+						</div>
+						
+						<div class="ui tiny header">
+								3:15 - 5:30 PM
+							<div class="sub header">
+								Austin 147 Drafting Lab | Lab
+							</div>
+						</div>
+						<div class="ui mini circular labels">
+							<div class="ui label">M</div>
+							<div class="ui teal label">Tu</div>
+							<div class="ui label">W</div>
+							<div class="ui teal label">Th</div>
+							<div class="ui label">F</div>
+							<div class="ui label">S</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<!-- Code -->
+					<td>
+						<div class="ui header">
+							<i class="grey radio icon"></i>
+							01
+						</div>
+					</td>
+					<!-- Instructor -->
+					<td>
+						
+						<a href="https://web.byui.edu/Directory/Employee/evartsa" class="ui header" target="_blank">
+							Evarts
+							<div class="sub header">
+								Adam<i class="small linkify icon"></i>
+							</div>
+						</a>
+						
+						
+					</td>
+					<!-- Rating -->
+					<td>
+						
+						
+						<a class="header" href="http://www.ratemyprofessors.com/search.jsp?queryoption=HEADER&queryBy=teacherName&schoolName=Brigham+Young+University-Idaho&schoolID=1754&query=Adam%20Evarts" target="_blank">
+							<div class="ui rating" data-rating="0" data-max-rating="5"></div>
+						</a>
+						
+						
+					</td>
+					<!-- Status -->
+					<td class="center aligned">
+						<div class="item">
+							
+							<div class="ui small teal progress" data-value="29" data-total="48">
+								<div class="bar"></div>
+								<div class="label">29 of 48 filled</div>
+							</div>
+						</div>
+					</td>
+					<!-- Schedule -->
+					<td>
+						
+						<div class="ui tiny header">
+								11:30AM - 1:30 PM
+							<div class="sub header">
+								Austin 127 | Lecture
+							</div>
+						</div>
+						<div class="ui mini circular labels">
+							<div class="ui teal label">M</div>
+							<div class="ui label">Tu</div>
+							<div class="ui label">W</div>
+							<div class="ui label">Th</div>
+							<div class="ui label">F</div>
+							<div class="ui label">S</div>
+						</div>
+						
+						<div class="ui tiny header">
+								11:30AM - 1:30 PM
+							<div class="sub header">
+								Austin 127 | Lab
+							</div>
+						</div>
+						<div class="ui mini circular labels">
+							<div class="ui label">M</div>
+							<div class="ui label">Tu</div>
+							<div class="ui teal label">W</div>
+							<div class="ui label">Th</div>
+							<div class="ui label">F</div>
+							<div class="ui label">S</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<!-- Code -->
+					<td>
+						<div class="ui header">
+							<i class="grey radio icon"></i>
+							01
+						</div>
+					</td>
+					<!-- Instructor -->
+					<td>
+						
+						<a href="https://web.byui.edu/Directory/Employees/NameLastFirst/Huish,Patrick" class="ui header" target="_blank">
+							Huish
+							<div class="sub header">
+								Patrick
+							</div>
+						</a>
+						
+						
+					</td>
+					<!-- Rating -->
+					<td>
+						
+						
+						<div class="ui rating" data-rating="5" data-max-rating="5"></div>
+						<br/>
+						<a class="header" href="http://www.ratemyprofessors.com/ShowRatings.jsp?tid=925118" target="_blank">10 reviews</a>
+						
+					</td>
+					<!-- Status -->
+					<td class="center aligned">
+						<div class="item">
+							
+							<div class="ui teal basic tiny label">Closed</div>
+							<div class="ui small disabled teal progress" data-value="25" data-total="24">
+								<div class="bar"></div>
+								<div class="label">25 of 24 filled</div>
+							</div>
+						</div>
+					</td>
+					<!-- Schedule -->
+					<td>
+						
+						<div class="ui tiny header">
+								3:15 - 5:15 PM
+							<div class="sub header">
+								Austin 145 Design Lab | Lecture
+							</div>
+						</div>
+						<div class="ui mini circular labels">
+							<div class="ui label">M</div>
+							<div class="ui teal label">Tu</div>
+							<div class="ui label">W</div>
+							<div class="ui label">Th</div>
+							<div class="ui label">F</div>
+							<div class="ui label">S</div>
+						</div>
+						
+						<div class="ui tiny header">
+								3:15 - 5:15 PM
+							<div class="sub header">
+								Austin 145 Design Lab | Lab
+							</div>
+						</div>
+						<div class="ui mini circular labels">
+							<div class="ui label">M</div>
+							<div class="ui label">Tu</div>
+							<div class="ui label">W</div>
+							<div class="ui teal label">Th</div>
+							<div class="ui label">F</div>
+							<div class="ui label">S</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<!-- Code -->
+					<td>
+						<div class="ui header">
+							<i class="grey radio icon"></i>
+							01
+						</div>
+					</td>
+					<!-- Instructor -->
+					<td>
+						
+						<a href="https://web.byui.edu/Directory/Employee/griffing" class="ui header" target="_blank">
+							Griffin
+							<div class="sub header">
+								Gerald<i class="small linkify icon"></i>
+							</div>
+						</a>
+						
+						
+					</td>
+					<!-- Rating -->
+					<td>
+						
+						
+						<div class="ui rating" data-rating="4" data-max-rating="5"></div>
+						<br/>
+						<a class="header" href="http://www.ratemyprofessors.com/ShowRatings.jsp?tid=633031" target="_blank">61 reviews</a>
+						
+					</td>
+					<!-- Status -->
+					<td class="center aligned">
+						<div class="item">
+							
+							<div class="ui teal basic tiny label">Closed</div>
+							<div class="ui small disabled teal progress" data-value="127" data-total="125">
+								<div class="bar"></div>
+								<div class="label">127 of 125 filled</div>
+							</div>
+						</div>
+					</td>
+					<!-- Schedule -->
+					<td>
+						
+						<div class="ui tiny header">
+								9:45 - 11:15 AM
+							<div class="sub header">
+								Spori 035 | Lecture
+							</div>
+						</div>
+						<div class="ui mini circular labels">
+							<div class="ui label">M</div>
+							<div class="ui teal label">Tu</div>
+							<div class="ui label">W</div>
+							<div class="ui teal label">Th</div>
+							<div class="ui label">F</div>
+							<div class="ui label">S</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<!-- Code -->
+					<td>
+						<div class="ui header">
+							<i class="grey radio icon"></i>
+							02
+						</div>
+					</td>
+					<!-- Instructor -->
+					<td>
+						
+						<a href="https://web.byui.edu/Directory/Employee/griffing" class="ui header" target="_blank">
+							Griffin
+							<div class="sub header">
+								Gerald<i class="small linkify icon"></i>
+							</div>
+						</a>
+						
+						
+					</td>
+					<!-- Rating -->
+					<td>
+						
+						
+						<div class="ui rating" data-rating="4" data-max-rating="5"></div>
+						<br/>
+						<a class="header" href="http://www.ratemyprofessors.com/ShowRatings.jsp?tid=633031" target="_blank">61 reviews</a>
+						
+					</td>
+					<!-- Status -->
+					<td class="center aligned">
+						<div class="item">
+							
+							<div class="ui teal basic tiny label">Closed</div>
+							<div class="ui small disabled teal progress" data-value="125" data-total="125">
+								<div class="bar"></div>
+								<div class="label">125 of 125 filled</div>
+							</div>
+						</div>
+					</td>
+					<!-- Schedule -->
+					<td>
+						
+						<div class="ui tiny header">
+								11:30AM - 1:00 PM
+							<div class="sub header">
+								Spori 035 | Lecture
+							</div>
+						</div>
+						<div class="ui mini circular labels">
+							<div class="ui label">M</div>
+							<div class="ui teal label">Tu</div>
+							<div class="ui label">W</div>
+							<div class="ui teal label">Th</div>
+							<div class="ui label">F</div>
+							<div class="ui label">S</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<!-- Code -->
+					<td>
+						<div class="ui header">
+							<i class="grey radio icon"></i>
+							01
+						</div>
+					</td>
+					<!-- Instructor -->
+					<td>
+						
+						<a href="https://web.byui.edu/Directory/Employees/NameLastFirst/Christiansen,Janet" class="ui header" target="_blank">
+							Christiansen
+							<div class="sub header">
+								Janet
+							</div>
+						</a>
+						
+						
+					</td>
+					<!-- Rating -->
+					<td>
+						
+						
+						<div class="ui rating" data-rating="3" data-max-rating="5"></div>
+						<br/>
+						<a class="header" href="http://www.ratemyprofessors.com/ShowRatings.jsp?tid=2270301" target="_blank">1 reviews</a>
+						
+					</td>
+					<!-- Status -->
+					<td class="center aligned">
+						<div class="item">
+							
+							<div class="ui teal basic tiny label">Closed</div>
+							<div class="ui small disabled teal progress" data-value="26" data-total="25">
+								<div class="bar"></div>
+								<div class="label">26 of 25 filled</div>
+							</div>
+						</div>
+					</td>
+					<!-- Schedule -->
+					<td>
+						
+						<div class="ui tiny header">
+								2:00 - 3:00 PM
+							<div class="sub header">
+								Kirkham 232 | Lecture
+							</div>
+						</div>
+						<div class="ui mini circular labels">
+							<div class="ui teal label">M</div>
+							<div class="ui label">Tu</div>
+							<div class="ui label">W</div>
+							<div class="ui label">Th</div>
+							<div class="ui label">F</div>
+							<div class="ui label">S</div>
+						</div>
+						
+						<div class="ui tiny header">
+								2:00 - 4:00 PM
+							<div class="sub header">
+								Kirkham 232 | Lab
+							</div>
+						</div>
+						<div class="ui mini circular labels">
+							<div class="ui label">M</div>
+							<div class="ui label">Tu</div>
+							<div class="ui teal label">W</div>
+							<div class="ui label">Th</div>
+							<div class="ui label">F</div>
+							<div class="ui label">S</div>
+						</div>
+						
+						<div class="ui tiny header">
+								3:00 - 4:00 PM
+							<div class="sub header">
+								Kirkham 232 | Lab
+							</div>
+						</div>
+						<div class="ui mini circular labels">
+							<div class="ui teal label">M</div>
+							<div class="ui label">Tu</div>
+							<div class="ui label">W</div>
+							<div class="ui label">Th</div>
+							<div class="ui label">F</div>
+							<div class="ui label">S</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<!-- Code -->
+					<td>
+						<div class="ui header">
+							<i class="grey radio icon"></i>
+							02
+						</div>
+					</td>
+					<!-- Instructor -->
+					<td>
+						
+						<a href="https://web.byui.edu/Directory/Employees/NameLastFirst/Christiansen,Janet" class="ui header" target="_blank">
+							Christiansen
+							<div class="sub header">
+								Janet
+							</div>
+						</a>
+						
+						
+					</td>
+					<!-- Rating -->
+					<td>
+						
+						
+						<div class="ui rating" data-rating="3" data-max-rating="5"></div>
+						<br/>
+						<a class="header" href="http://www.ratemyprofessors.com/ShowRatings.jsp?tid=2270301" target="_blank">1 reviews</a>
+						
+					</td>
+					<!-- Status -->
+					<td class="center aligned">
+						<div class="item">
+							
+							<div class="ui small teal progress" data-value="24" data-total="25">
+								<div class="bar"></div>
+								<div class="label">24 of 25 filled</div>
+							</div>
+						</div>
+					</td>
+					<!-- Schedule -->
+					<td>
+						
+						<div class="ui tiny header">
+								2:00 - 3:00 PM
+							<div class="sub header">
+								Kirkham 232 | Lecture
+							</div>
+						</div>
+						<div class="ui mini circular labels">
+							<div class="ui teal label">M</div>
+							<div class="ui label">Tu</div>
+							<div class="ui label">W</div>
+							<div class="ui label">Th</div>
+							<div class="ui label">F</div>
+							<div class="ui label">S</div>
+						</div>
+						
+						<div class="ui tiny header">
+								2:00 - 4:00 PM
+							<div class="sub header">
+								Kirkham 232 | Lab
+							</div>
+						</div>
+						<div class="ui mini circular labels">
+							<div class="ui label">M</div>
+							<div class="ui label">Tu</div>
+							<div class="ui teal label">W</div>
+							<div class="ui label">Th</div>
+							<div class="ui label">F</div>
+							<div class="ui label">S</div>
+						</div>
+						
+						<div class="ui tiny header">
+								3:00 - 4:00 PM
+							<div class="sub header">
+								Kirkham 232 | Lab
+							</div>
+						</div>
+						<div class="ui mini circular labels">
+							<div class="ui teal label">M</div>
+							<div class="ui label">Tu</div>
+							<div class="ui label">W</div>
+							<div class="ui label">Th</div>
+							<div class="ui label">F</div>
+							<div class="ui label">S</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<!-- Code -->
+					<td>
+						<div class="ui header">
+							<i class="grey radio icon"></i>
+							03
+						</div>
+					</td>
+					<!-- Instructor -->
+					<td>
+						
+						<a href="https://web.byui.edu/Directory/Employees/NameLastFirst/Christiansen,Janet" class="ui header" target="_blank">
+							Christiansen
+							<div class="sub header">
+								Janet
+							</div>
+						</a>
+						
+						
+					</td>
+					<!-- Rating -->
+					<td>
+						
+						
+						<div class="ui rating" data-rating="3" data-max-rating="5"></div>
+						<br/>
+						<a class="header" href="http://www.ratemyprofessors.com/ShowRatings.jsp?tid=2270301" target="_blank">1 reviews</a>
+						
+					</td>
+					<!-- Status -->
+					<td class="center aligned">
+						<div class="item">
+							
+							<div class="ui teal basic tiny label">Closed</div>
+							<div class="ui small disabled teal progress" data-value="25" data-total="25">
+								<div class="bar"></div>
+								<div class="label">25 of 25 filled</div>
+							</div>
+						</div>
+					</td>
+					<!-- Schedule -->
+					<td>
+						
+						<div class="ui tiny header">
+								2:00 - 3:00 PM
+							<div class="sub header">
+								Kirkham 232 | Lecture
+							</div>
+						</div>
+						<div class="ui mini circular labels">
+							<div class="ui teal label">M</div>
+							<div class="ui label">Tu</div>
+							<div class="ui label">W</div>
+							<div class="ui label">Th</div>
+							<div class="ui label">F</div>
+							<div class="ui label">S</div>
+						</div>
+						
+						<div class="ui tiny header">
+								2:00 - 4:00 PM
+							<div class="sub header">
+								Kirkham 232 | Lab
+							</div>
+						</div>
+						<div class="ui mini circular labels">
+							<div class="ui label">M</div>
+							<div class="ui label">Tu</div>
+							<div class="ui teal label">W</div>
+							<div class="ui label">Th</div>
+							<div class="ui label">F</div>
+							<div class="ui label">S</div>
+						</div>
+						
+						<div class="ui tiny header">
+								3:00 - 4:00 PM
+							<div class="sub header">
+								Kirkham 232 | Lab
+							</div>
+						</div>
+						<div class="ui mini circular labels">
+							<div class="ui teal label">M</div>
+							<div class="ui label">Tu</div>
+							<div class="ui label">W</div>
+							<div class="ui label">Th</div>
+							<div class="ui label">F</div>
+							<div class="ui label">S</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<!-- Code -->
+					<td>
+						<div class="ui header">
+							<i class="grey radio icon"></i>
+							01
+						</div>
+					</td>
+					<!-- Instructor -->
+					<td>
+						
+						<a href="https://web.byui.edu/Directory/Employee/fransons" class="ui header" target="_blank">
+							Franson
+							<div class="sub header">
+								Scott<i class="small linkify icon"></i>
+							</div>
+						</a>
+						
+						
+					</td>
+					<!-- Rating -->
+					<td>
+						
+						
+						<div class="ui rating" data-rating="4" data-max-rating="5"></div>
+						<br/>
+						<a class="header" href="http://www.ratemyprofessors.com/ShowRatings.jsp?tid=712042" target="_blank">9 reviews</a>
+						
+					</td>
+					<!-- Status -->
+					<td class="center aligned">
+						<div class="item">
+							
+							<div class="ui teal basic tiny label">Closed</div>
+							<div class="ui small disabled teal progress" data-value="26" data-total="23">
+								<div class="bar"></div>
+								<div class="label">26 of 23 filled</div>
+							</div>
+						</div>
+					</td>
+					<!-- Schedule -->
+					<td>
+						
+						<div class="ui tiny header">
+								2:00 - 4:45 PM
+							<div class="sub header">
+								Spori 339 Water Color St | Lecture
+							</div>
+						</div>
+						<div class="ui mini circular labels">
+							<div class="ui teal label">M</div>
+							<div class="ui label">Tu</div>
+							<div class="ui teal label">W</div>
+							<div class="ui label">Th</div>
+							<div class="ui label">F</div>
+							<div class="ui label">S</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<!-- Code -->
+					<td>
+						<div class="ui header">
+							<i class="grey radio icon"></i>
+							02
+						</div>
+					</td>
+					<!-- Instructor -->
+					<td>
+						
+						<a href="https://web.byui.edu/Directory/Employee/ryant" class="ui header" target="_blank">
+							Ryan
+							<div class="sub header">
+								Teresa<i class="small linkify icon"></i>
+							</div>
+						</a>
+						
+						
+					</td>
+					<!-- Rating -->
+					<td>
+						
+						
+						<div class="ui rating" data-rating="4" data-max-rating="5"></div>
+						<br/>
+						<a class="header" href="http://www.ratemyprofessors.com/ShowRatings.jsp?tid=1865836" target="_blank">5 reviews</a>
+						
+					</td>
+					<!-- Status -->
+					<td class="center aligned">
+						<div class="item">
+							
+							<div class="ui teal basic tiny label">Closed</div>
+							<div class="ui small disabled teal progress" data-value="25" data-total="25">
+								<div class="bar"></div>
+								<div class="label">25 of 25 filled</div>
+							</div>
+						</div>
+					</td>
+					<!-- Schedule -->
+					<td>
+						
+						<div class="ui tiny header">
+								Online Class (Web)
+							<div class="sub header">
+								Online
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<!-- Code -->
+					<td>
+						<div class="ui header">
+							<i class="grey radio icon"></i>
+							04
+						</div>
+					</td>
+					<!-- Instructor -->
+					<td>
+						
+						<a href="https://web.byui.edu/Directory/Employee/finchje" class="ui header" target="_blank">
+							Finch
+							<div class="sub header">
+								Jenni<i class="small linkify icon"></i>
+							</div>
+						</a>
+						
+						
+					</td>
+					<!-- Rating -->
+					<td>
+						
+						
+						<a class="header" href="http://www.ratemyprofessors.com/search.jsp?queryoption=HEADER&queryBy=teacherName&schoolName=Brigham+Young+University-Idaho&schoolID=1754&query=Jenni%20Finch" target="_blank">
+							<div class="ui rating" data-rating="0" data-max-rating="5"></div>
+						</a>
+						
+						
+					</td>
+					<!-- Status -->
+					<td class="center aligned">
+						<div class="item">
+							
+							<div class="ui small teal progress" data-value="24" data-total="25">
+								<div class="bar"></div>
+								<div class="label">24 of 25 filled</div>
+							</div>
+						</div>
+					</td>
+					<!-- Schedule -->
+					<td>
+						
+						<div class="ui tiny header">
+								Online Class (Web)
+							<div class="sub header">
+								Online
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<!-- Code -->
+					<td>
+						<div class="ui header">
+							<i class="grey radio icon"></i>
+							05
+						</div>
+					</td>
+					<!-- Instructor -->
+					<td>
+						
+						<a href="https://web.byui.edu/Directory/Employee/willmutha" class="ui header" target="_blank">
+							Willmuth
+							<div class="sub header">
+								Amy<i class="small linkify icon"></i>
+							</div>
+						</a>
+						
+						
+					</td>
+					<!-- Rating -->
+					<td>
+						
+						
+						<a class="header" href="http://www.ratemyprofessors.com/search.jsp?queryoption=HEADER&queryBy=teacherName&schoolName=Brigham+Young+University-Idaho&schoolID=1754&query=Amy%20Willmuth" target="_blank">
+							<div class="ui rating" data-rating="0" data-max-rating="5"></div>
+						</a>
+						
+						
+					</td>
+					<!-- Status -->
+					<td class="center aligned">
+						<div class="item">
+							
+							<div class="ui small teal progress" data-value="23" data-total="25">
+								<div class="bar"></div>
+								<div class="label">23 of 25 filled</div>
+							</div>
+						</div>
+					</td>
+					<!-- Schedule -->
+					<td>
+						
+						<div class="ui tiny header">
+								Online Class (Web)
+							<div class="sub header">
+								Online
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<!-- Code -->
+					<td>
+						<div class="ui header">
+							<i class="grey radio icon"></i>
+							06
+						</div>
+					</td>
+					<!-- Instructor -->
+					<td>
+						
+						<a href="https://web.byui.edu/Directory/Employee/tannert" class="ui header" target="_blank">
+							Tanner
+							<div class="sub header">
+								Tim<i class="small linkify icon"></i>
+							</div>
+						</a>
+						
+						
+					</td>
+					<!-- Rating -->
+					<td>
+						
+						
+						<div class="ui rating" data-rating="5" data-max-rating="5"></div>
+						<br/>
+						<a class="header" href="http://www.ratemyprofessors.com/ShowRatings.jsp?tid=1046717" target="_blank">17 reviews</a>
+						
+					</td>
+					<!-- Status -->
+					<td class="center aligned">
+						<div class="item">
+							
+							<div class="ui small teal progress" data-value="24" data-total="25">
+								<div class="bar"></div>
+								<div class="label">24 of 25 filled</div>
+							</div>
+						</div>
+					</td>
+					<!-- Schedule -->
+					<td>
+						
+						<div class="ui tiny header">
+								Online Class (Web)
+							<div class="sub header">
+								Online
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<!-- Code -->
+					<td>
+						<div class="ui header">
+							<i class="grey radio icon"></i>
+							07
+						</div>
+					</td>
+					<!-- Instructor -->
+					<td>
+						
+						<a href="https://web.byui.edu/Directory/Employee/orchardt" class="ui header" target="_blank">
+							Orchard
+							<div class="sub header">
+								Todd<i class="small linkify icon"></i>
+							</div>
+						</a>
+						
+						
+					</td>
+					<!-- Rating -->
+					<td>
+						
+						
+						<div class="ui rating" data-rating="4" data-max-rating="5"></div>
+						<br/>
+						<a class="header" href="http://www.ratemyprofessors.com/ShowRatings.jsp?tid=2106895" target="_blank">2 reviews</a>
+						
+					</td>
+					<!-- Status -->
+					<td class="center aligned">
+						<div class="item">
+							
+							<div class="ui small teal progress" data-value="21" data-total="25">
+								<div class="bar"></div>
+								<div class="label">21 of 25 filled</div>
+							</div>
+						</div>
+					</td>
+					<!-- Schedule -->
+					<td>
+						
+						<div class="ui tiny header">
+								Online Class (Web)
+							<div class="sub header">
+								Online
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<!-- Code -->
+					<td>
+						<div class="ui header">
+							<i class="grey radio icon"></i>
+							08
+						</div>
+					</td>
+					<!-- Instructor -->
+					<td>
+						
+						<a href="https://web.byui.edu/Directory/Employee/colesj" class="ui header" target="_blank">
+							Coles
+							<div class="sub header">
+								Jason<i class="small linkify icon"></i>
+							</div>
+						</a>
+						
+						
+					</td>
+					<!-- Rating -->
+					<td>
+						
+						
+						<div class="ui rating" data-rating="3" data-max-rating="5"></div>
+						<br/>
+						<a class="header" href="http://www.ratemyprofessors.com/ShowRatings.jsp?tid=1617768" target="_blank">2 reviews</a>
+						
+					</td>
+					<!-- Status -->
+					<td class="center aligned">
+						<div class="item">
+							
+							<div class="ui small teal progress" data-value="24" data-total="25">
+								<div class="bar"></div>
+								<div class="label">24 of 25 filled</div>
+							</div>
+						</div>
+					</td>
+					<!-- Schedule -->
+					<td>
+						
+						<div class="ui tiny header">
+								Online Class (Web)
+							<div class="sub header">
+								Online
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<!-- Code -->
+					<td>
+						<div class="ui header">
+							<i class="grey radio icon"></i>
+							10
+						</div>
+					</td>
+					<!-- Instructor -->
+					<td>
+						
+						<a href="https://web.byui.edu/Directory/Employee/churche" class="ui header" target="_blank">
+							Church
+							<div class="sub header">
+								Elise<i class="small linkify icon"></i>
+							</div>
+						</a>
+						
+						
+					</td>
+					<!-- Rating -->
+					<td>
+						
+						
+						<div class="ui rating" data-rating="2" data-max-rating="5"></div>
+						<br/>
+						<a class="header" href="http://www.ratemyprofessors.com/ShowRatings.jsp?tid=1739124" target="_blank">1 reviews</a>
+						
+					</td>
+					<!-- Status -->
+					<td class="center aligned">
+						<div class="item">
+							
+							<div class="ui small teal progress" data-value="22" data-total="25">
+								<div class="bar"></div>
+								<div class="label">22 of 25 filled</div>
+							</div>
+						</div>
+					</td>
+					<!-- Schedule -->
+					<td>
+						
+						<div class="ui tiny header">
+								Online Class (Web)
+							<div class="sub header">
+								Online
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<!-- Code -->
+					<td>
+						<div class="ui header">
+							<i class="grey radio icon"></i>
+							11
+						</div>
+					</td>
+					<!-- Instructor -->
+					<td>
+						
+						<a href="https://web.byui.edu/Directory/Employees/NameLastFirst/Muir,Michael" class="ui header" target="_blank">
+							Muir
+							<div class="sub header">
+								Michael
+							</div>
+						</a>
+						
+						
+					</td>
+					<!-- Rating -->
+					<td>
+						
+						
+						<a class="header" href="http://www.ratemyprofessors.com/search.jsp?queryoption=HEADER&queryBy=teacherName&schoolName=Brigham+Young+University-Idaho&schoolID=1754&query=Michael%20Muir" target="_blank">
+							<div class="ui rating" data-rating="0" data-max-rating="5"></div>
+						</a>
+						
+						
+					</td>
+					<!-- Status -->
+					<td class="center aligned">
+						<div class="item">
+							
+							<div class="ui small teal progress" data-value="24" data-total="25">
+								<div class="bar"></div>
+								<div class="label">24 of 25 filled</div>
+							</div>
+						</div>
+					</td>
+					<!-- Schedule -->
+					<td>
+						
+						<div class="ui tiny header">
+								Online Class (Web)
+							<div class="sub header">
+								Online
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<!-- Code -->
+					<td>
+						<div class="ui header">
+							<i class="grey radio icon"></i>
+							12
+						</div>
+					</td>
+					<!-- Instructor -->
+					<td>
+						
+						<a href="https://web.byui.edu/Directory/Employee/finchje" class="ui header" target="_blank">
+							Finch
+							<div class="sub header">
+								Jenni<i class="small linkify icon"></i>
+							</div>
+						</a>
+						
+						
+					</td>
+					<!-- Rating -->
+					<td>
+						
+						
+						<a class="header" href="http://www.ratemyprofessors.com/search.jsp?queryoption=HEADER&queryBy=teacherName&schoolName=Brigham+Young+University-Idaho&schoolID=1754&query=Jenni%20Finch" target="_blank">
+							<div class="ui rating" data-rating="0" data-max-rating="5"></div>
+						</a>
+						
+						
+					</td>
+					<!-- Status -->
+					<td class="center aligned">
+						<div class="item">
+							
+							<div class="ui small teal progress" data-value="24" data-total="25">
+								<div class="bar"></div>
+								<div class="label">24 of 25 filled</div>
+							</div>
+						</div>
+					</td>
+					<!-- Schedule -->
+					<td>
+						
+						<div class="ui tiny header">
+								Online Class (Web)
+							<div class="sub header">
+								Online
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<!-- Code -->
+					<td>
+						<div class="ui header">
+							<i class="grey radio icon"></i>
+							01
+						</div>
+					</td>
+					<!-- Instructor -->
+					<td>
+						
+						<a href="https://web.byui.edu/Directory/Employees/NameLastFirst/Ralph,Melvin" class="ui header" target="_blank">
+							Ralph
+							<div class="sub header">
+								Melvin
+							</div>
+						</a>
+						
+						<div class="ui divider"></div>
+						
+						<a href="https://web.byui.edu/Directory/Employee/astleb" class="ui header" target="_blank">
+							Astle
+							<div class="sub header">
+								Brian<i class="small linkify icon"></i>
+							</div>
+						</a>
+						
+						
+					</td>
+					<!-- Rating -->
+					<td>
+						
+						
+						<a class="header" href="http://www.ratemyprofessors.com/search.jsp?queryoption=HEADER&queryBy=teacherName&schoolName=Brigham+Young+University-Idaho&schoolID=1754&query=Melvin%20Ralph" target="_blank">
+							<div class="ui rating" data-rating="0" data-max-rating="5"></div>
+						</a>
+						<br/><br/>
+						<div class="ui divider"></div>
+						
+						
+						<div class="ui rating" data-rating="5" data-max-rating="5"></div>
+						<br/>
+						<a class="header" href="http://www.ratemyprofessors.com/ShowRatings.jsp?tid=2151835" target="_blank">7 reviews</a>
+						
+					</td>
+					<!-- Status -->
+					<td class="center aligned">
+						<div class="item">
+							
+							<div class="ui small teal progress" data-value="24" data-total="25">
+								<div class="bar"></div>
+								<div class="label">24 of 25 filled</div>
+							</div>
+						</div>
+					</td>
+					<!-- Schedule -->
+					<td>
+						
+						<div class="ui tiny header">
+								11:30AM - 12:30 PM
+							<div class="sub header">
+								Kirkham 232 | Lab
+							</div>
+						</div>
+						<div class="ui mini circular labels">
+							<div class="ui label">M</div>
+							<div class="ui label">Tu</div>
+							<div class="ui teal label">W</div>
+							<div class="ui label">Th</div>
+							<div class="ui teal label">F</div>
+							<div class="ui label">S</div>
+						</div>
+						
+						<div class="ui tiny header">
+								Online Class (Web)
+							<div class="sub header">
+								Hybrid (Class &amp; Online)
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<!-- Code -->
+					<td>
+						<div class="ui header">
+							<i class="grey radio icon"></i>
+							02
+						</div>
+					</td>
+					<!-- Instructor -->
+					<td>
+						
+						<a href="https://web.byui.edu/Directory/Employees/NameLastFirst/Roholt,Jennifer" class="ui header" target="_blank">
+							Roholt
+							<div class="sub header">
+								Jennifer
+							</div>
+						</a>
+						
+						<div class="ui divider"></div>
+						
+						<a href="https://web.byui.edu/Directory/Employee/astleb" class="ui header" target="_blank">
+							Astle
+							<div class="sub header">
+								Brian<i class="small linkify icon"></i>
+							</div>
+						</a>
+						
+						
+					</td>
+					<!-- Rating -->
+					<td>
+						
+						
+						<a class="header" href="http://www.ratemyprofessors.com/search.jsp?queryoption=HEADER&queryBy=teacherName&schoolName=Brigham+Young+University-Idaho&schoolID=1754&query=Jennifer%20Roholt" target="_blank">
+							<div class="ui rating" data-rating="0" data-max-rating="5"></div>
+						</a>
+						<br/><br/>
+						<div class="ui divider"></div>
+						
+						
+						<div class="ui rating" data-rating="5" data-max-rating="5"></div>
+						<br/>
+						<a class="header" href="http://www.ratemyprofessors.com/ShowRatings.jsp?tid=2151835" target="_blank">7 reviews</a>
+						
+					</td>
+					<!-- Status -->
+					<td class="center aligned">
+						<div class="item">
+							
+							<div class="ui teal basic tiny label">Closed</div>
+							<div class="ui small disabled teal progress" data-value="25" data-total="25">
+								<div class="bar"></div>
+								<div class="label">25 of 25 filled</div>
+							</div>
+						</div>
+					</td>
+					<!-- Schedule -->
+					<td>
+						
+						<div class="ui tiny header">
+								11:30AM - 12:30 PM
+							<div class="sub header">
+								Kirkham 232 | Lab
+							</div>
+						</div>
+						<div class="ui mini circular labels">
+							<div class="ui label">M</div>
+							<div class="ui label">Tu</div>
+							<div class="ui teal label">W</div>
+							<div class="ui label">Th</div>
+							<div class="ui teal label">F</div>
+							<div class="ui label">S</div>
+						</div>
+						
+						<div class="ui tiny header">
+								Online Class (Web)
+							<div class="sub header">
+								Hybrid (Class &amp; Online)
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<!-- Code -->
+					<td>
+						<div class="ui header">
+							<i class="grey radio icon"></i>
+							03
+						</div>
+					</td>
+					<!-- Instructor -->
+					<td>
+						
+						<a href="https://web.byui.edu/Directory/Employee/hobbsj" class="ui header" target="_blank">
+							Hobbs
+							<div class="sub header">
+								Joshua<i class="small linkify icon"></i>
+							</div>
+						</a>
+						
+						<div class="ui divider"></div>
+						
+						<a href="https://web.byui.edu/Directory/Employee/astleb" class="ui header" target="_blank">
+							Astle
+							<div class="sub header">
+								Brian<i class="small linkify icon"></i>
+							</div>
+						</a>
+						
+						
+					</td>
+					<!-- Rating -->
+					<td>
+						
+						
+						<a class="header" href="http://www.ratemyprofessors.com/search.jsp?queryoption=HEADER&queryBy=teacherName&schoolName=Brigham+Young+University-Idaho&schoolID=1754&query=Joshua%20Hobbs" target="_blank">
+							<div class="ui rating" data-rating="0" data-max-rating="5"></div>
+						</a>
+						<br/><br/>
+						<div class="ui divider"></div>
+						
+						
+						<div class="ui rating" data-rating="5" data-max-rating="5"></div>
+						<br/>
+						<a class="header" href="http://www.ratemyprofessors.com/ShowRatings.jsp?tid=2151835" target="_blank">7 reviews</a>
+						
+					</td>
+					<!-- Status -->
+					<td class="center aligned">
+						<div class="item">
+							
+							<div class="ui teal basic tiny label">Closed</div>
+							<div class="ui small disabled teal progress" data-value="26" data-total="25">
+								<div class="bar"></div>
+								<div class="label">26 of 25 filled</div>
+							</div>
+						</div>
+					</td>
+					<!-- Schedule -->
+					<td>
+						
+						<div class="ui tiny header">
+								11:30AM - 12:30 PM
+							<div class="sub header">
+								Kirkham 232 | Lab
+							</div>
+						</div>
+						<div class="ui mini circular labels">
+							<div class="ui label">M</div>
+							<div class="ui label">Tu</div>
+							<div class="ui teal label">W</div>
+							<div class="ui label">Th</div>
+							<div class="ui teal label">F</div>
+							<div class="ui label">S</div>
+						</div>
+						
+						<div class="ui tiny header">
+								Online Class (Web)
+							<div class="sub header">
+								Hybrid (Class &amp; Online)
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<!-- Code -->
+					<td>
+						<div class="ui header">
+							<i class="grey radio icon"></i>
+							05
+						</div>
+					</td>
+					<!-- Instructor -->
+					<td>
+						
+						<a href="https://web.byui.edu/Directory/Employee/zundeld" class="ui header" target="_blank">
+							Zundel
+							<div class="sub header">
+								Dallyn<i class="small linkify icon"></i>
+							</div>
+						</a>
+						
+						<div class="ui divider"></div>
+						
+						<a href="https://web.byui.edu/Directory/Employee/astleb" class="ui header" target="_blank">
+							Astle
+							<div class="sub header">
+								Brian<i class="small linkify icon"></i>
+							</div>
+						</a>
+						
+						
+					</td>
+					<!-- Rating -->
+					<td>
+						
+						
+						<div class="ui rating" data-rating="3" data-max-rating="5"></div>
+						<br/>
+						<a class="header" href="http://www.ratemyprofessors.com/ShowRatings.jsp?tid=2218318" target="_blank">4 reviews</a>
+						<div class="ui divider"></div>
+						
+						
+						<div class="ui rating" data-rating="5" data-max-rating="5"></div>
+						<br/>
+						<a class="header" href="http://www.ratemyprofessors.com/ShowRatings.jsp?tid=2151835" target="_blank">7 reviews</a>
+						
+					</td>
+					<!-- Status -->
+					<td class="center aligned">
+						<div class="item">
+							
+							<div class="ui teal basic tiny label">Closed</div>
+							<div class="ui small disabled teal progress" data-value="25" data-total="25">
+								<div class="bar"></div>
+								<div class="label">25 of 25 filled</div>
+							</div>
+						</div>
+					</td>
+					<!-- Schedule -->
+					<td>
+						
+						<div class="ui tiny header">
+								12:45 - 1:45 PM
+							<div class="sub header">
+								Kirkham 232 | Lab
+							</div>
+						</div>
+						<div class="ui mini circular labels">
+							<div class="ui label">M</div>
+							<div class="ui label">Tu</div>
+							<div class="ui teal label">W</div>
+							<div class="ui label">Th</div>
+							<div class="ui teal label">F</div>
+							<div class="ui label">S</div>
+						</div>
+						
+						<div class="ui tiny header">
+								Online Class (Web)
+							<div class="sub header">
+								Hybrid (Class &amp; Online)
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<!-- Code -->
+					<td>
+						<div class="ui header">
+							<i class="grey radio icon"></i>
+							06
+						</div>
+					</td>
+					<!-- Instructor -->
+					<td>
+						
+						<a href="https://web.byui.edu/Directory/Employee/stahmannm" class="ui header" target="_blank">
+							Stahmann
+							<div class="sub header">
+								Mark<i class="small linkify icon"></i>
+							</div>
+						</a>
+						
+						<div class="ui divider"></div>
+						
+						<a href="https://web.byui.edu/Directory/Employee/astleb" class="ui header" target="_blank">
+							Astle
+							<div class="sub header">
+								Brian<i class="small linkify icon"></i>
+							</div>
+						</a>
+						
+						
+					</td>
+					<!-- Rating -->
+					<td>
+						
+						
+						<a class="header" href="http://www.ratemyprofessors.com/search.jsp?queryoption=HEADER&queryBy=teacherName&schoolName=Brigham+Young+University-Idaho&schoolID=1754&query=Mark%20Stahmann" target="_blank">
+							<div class="ui rating" data-rating="0" data-max-rating="5"></div>
+						</a>
+						<br/><br/>
+						<div class="ui divider"></div>
+						
+						
+						<div class="ui rating" data-rating="5" data-max-rating="5"></div>
+						<br/>
+						<a class="header" href="http://www.ratemyprofessors.com/ShowRatings.jsp?tid=2151835" target="_blank">7 reviews</a>
+						
+					</td>
+					<!-- Status -->
+					<td class="center aligned">
+						<div class="item">
+							
+							<div class="ui teal basic tiny label">Closed</div>
+							<div class="ui small disabled teal progress" data-value="25" data-total="25">
+								<div class="bar"></div>
+								<div class="label">25 of 25 filled</div>
+							</div>
+						</div>
+					</td>
+					<!-- Schedule -->
+					<td>
+						
+						<div class="ui tiny header">
+								12:45 - 1:45 PM
+							<div class="sub header">
+								Kirkham 232 | Lab
+							</div>
+						</div>
+						<div class="ui mini circular labels">
+							<div class="ui label">M</div>
+							<div class="ui label">Tu</div>
+							<div class="ui teal label">W</div>
+							<div class="ui label">Th</div>
+							<div class="ui teal label">F</div>
+							<div class="ui label">S</div>
+						</div>
+						
+						<div class="ui tiny header">
+								Online Class (Web)
+							<div class="sub header">
+								Hybrid (Class &amp; Online)
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<!-- Code -->
+					<td>
+						<div class="ui header">
+							<i class="grey radio icon"></i>
+							07
+						</div>
+					</td>
+					<!-- Instructor -->
+					<td>
+						
+						<a href="https://web.byui.edu/Directory/Employees/NameLastFirst/Howard,Ellis" class="ui header" target="_blank">
+							Howard
+							<div class="sub header">
+								Ellis
+							</div>
+						</a>
+						
+						<div class="ui divider"></div>
+						
+						<a href="https://web.byui.edu/Directory/Employee/astleb" class="ui header" target="_blank">
+							Astle
+							<div class="sub header">
+								Brian<i class="small linkify icon"></i>
+							</div>
+						</a>
+						
+						
+					</td>
+					<!-- Rating -->
+					<td>
+						
+						
+						<a class="header" href="http://www.ratemyprofessors.com/search.jsp?queryoption=HEADER&queryBy=teacherName&schoolName=Brigham+Young+University-Idaho&schoolID=1754&query=Ellis%20Howard" target="_blank">
+							<div class="ui rating" data-rating="0" data-max-rating="5"></div>
+						</a>
+						<br/><br/>
+						<div class="ui divider"></div>
+						
+						
+						<div class="ui rating" data-rating="5" data-max-rating="5"></div>
+						<br/>
+						<a class="header" href="http://www.ratemyprofessors.com/ShowRatings.jsp?tid=2151835" target="_blank">7 reviews</a>
+						
+					</td>
+					<!-- Status -->
+					<td class="center aligned">
+						<div class="item">
+							
+							<div class="ui teal basic tiny label">Closed</div>
+							<div class="ui small disabled teal progress" data-value="25" data-total="25">
+								<div class="bar"></div>
+								<div class="label">25 of 25 filled</div>
+							</div>
+						</div>
+					</td>
+					<!-- Schedule -->
+					<td>
+						
+						<div class="ui tiny header">
+								12:45 - 1:45 PM
+							<div class="sub header">
+								Kirkham 232 | Lab
+							</div>
+						</div>
+						<div class="ui mini circular labels">
+							<div class="ui label">M</div>
+							<div class="ui label">Tu</div>
+							<div class="ui teal label">W</div>
+							<div class="ui label">Th</div>
+							<div class="ui teal label">F</div>
+							<div class="ui label">S</div>
+						</div>
+						
+						<div class="ui tiny header">
+								Online Class (Web)
+							<div class="sub header">
+								Hybrid (Class &amp; Online)
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<!-- Code -->
+					<td>
+						<div class="ui header">
+							<i class="grey radio icon"></i>
+							08
+						</div>
+					</td>
+					<!-- Instructor -->
+					<td>
+						
+						<a href="https://web.byui.edu/Directory/Employee/claryb" class="ui header" target="_blank">
+							Clary
+							<div class="sub header">
+								Brendan<i class="small linkify icon"></i>
+							</div>
+						</a>
+						
+						<div class="ui divider"></div>
+						
+						<a href="https://web.byui.edu/Directory/Employee/astleb" class="ui header" target="_blank">
+							Astle
+							<div class="sub header">
+								Brian<i class="small linkify icon"></i>
+							</div>
+						</a>
+						
+						
+					</td>
+					<!-- Rating -->
+					<td>
+						
+						
+						<a class="header" href="http://www.ratemyprofessors.com/search.jsp?queryoption=HEADER&queryBy=teacherName&schoolName=Brigham+Young+University-Idaho&schoolID=1754&query=Brendan%20Clary" target="_blank">
+							<div class="ui rating" data-rating="0" data-max-rating="5"></div>
+						</a>
+						<br/><br/>
+						<div class="ui divider"></div>
+						
+						
+						<div class="ui rating" data-rating="5" data-max-rating="5"></div>
+						<br/>
+						<a class="header" href="http://www.ratemyprofessors.com/ShowRatings.jsp?tid=2151835" target="_blank">7 reviews</a>
+						
+					</td>
+					<!-- Status -->
+					<td class="center aligned">
+						<div class="item">
+							
+							<div class="ui teal basic tiny label">Closed</div>
+							<div class="ui small disabled teal progress" data-value="26" data-total="25">
+								<div class="bar"></div>
+								<div class="label">26 of 25 filled</div>
+							</div>
+						</div>
+					</td>
+					<!-- Schedule -->
+					<td>
+						
+						<div class="ui tiny header">
+								12:45 - 1:45 PM
+							<div class="sub header">
+								Kirkham 232 | Lab
+							</div>
+						</div>
+						<div class="ui mini circular labels">
+							<div class="ui label">M</div>
+							<div class="ui label">Tu</div>
+							<div class="ui teal label">W</div>
+							<div class="ui label">Th</div>
+							<div class="ui teal label">F</div>
+							<div class="ui label">S</div>
+						</div>
+						
+						<div class="ui tiny header">
+								Online Class (Web)
+							<div class="sub header">
+								Hybrid (Class &amp; Online)
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<!-- Code -->
+					<td>
+						<div class="ui header">
+							<i class="grey radio icon"></i>
+							09
+						</div>
+					</td>
+					<!-- Instructor -->
+					<td>
+						
+						<a href="https://web.byui.edu/Directory/Employees/NameLastFirst/Lowry,Kathryn" class="ui header" target="_blank">
+							Lowry
+							<div class="sub header">
+								Kathryn
+							</div>
+						</a>
+						
+						
+					</td>
+					<!-- Rating -->
+					<td>
+						
+						
+						<a class="header" href="http://www.ratemyprofessors.com/search.jsp?queryoption=HEADER&queryBy=teacherName&schoolName=Brigham+Young+University-Idaho&schoolID=1754&query=Kathryn%20Lowry" target="_blank">
+							<div class="ui rating" data-rating="0" data-max-rating="5"></div>
+						</a>
+						
+						
+					</td>
+					<!-- Status -->
+					<td class="center aligned">
+						<div class="item">
+							
+							<div class="ui small teal progress" data-value="22" data-total="25">
+								<div class="bar"></div>
+								<div class="label">22 of 25 filled</div>
+							</div>
+						</div>
+					</td>
+					<!-- Schedule -->
+					<td>
+						
+						<div class="ui tiny header">
+								Online Class (Web)
+							<div class="sub header">
+								Online
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<!-- Code -->
+					<td>
+						<div class="ui header">
+							<i class="grey radio icon"></i>
+							10
+						</div>
+					</td>
+					<!-- Instructor -->
+					<td>
+						
+						<a href="https://web.byui.edu/Directory/Employees/NameLastFirst/Lee,Hae" class="ui header" target="_blank">
+							Lee
+							<div class="sub header">
+								Hae
+							</div>
+						</a>
+						
+						
+					</td>
+					<!-- Rating -->
+					<td>
+						
+						
+						<a class="header" href="http://www.ratemyprofessors.com/search.jsp?queryoption=HEADER&queryBy=teacherName&schoolName=Brigham+Young+University-Idaho&schoolID=1754&query=Hae%20Lee" target="_blank">
+							<div class="ui rating" data-rating="0" data-max-rating="5"></div>
+						</a>
+						
+						
+					</td>
+					<!-- Status -->
+					<td class="center aligned">
+						<div class="item">
+							
+							<div class="ui small teal progress" data-value="20" data-total="25">
+								<div class="bar"></div>
+								<div class="label">20 of 25 filled</div>
+							</div>
+						</div>
+					</td>
+					<!-- Schedule -->
+					<td>
+						
+						<div class="ui tiny header">
+								Online Class (Web)
+							<div class="sub header">
+								Online
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<!-- Code -->
+					<td>
+						<div class="ui header">
+							<i class="grey radio icon"></i>
+							01
+						</div>
+					</td>
+					<!-- Instructor -->
+					<td>
+						
+						<a href="https://web.byui.edu/Directory/Employees/NameLastFirst/Christiansen,Janet" class="ui header" target="_blank">
+							Christiansen
+							<div class="sub header">
+								Janet
+							</div>
+						</a>
+						
+						
+					</td>
+					<!-- Rating -->
+					<td>
+						
+						
+						<div class="ui rating" data-rating="3" data-max-rating="5"></div>
+						<br/>
+						<a class="header" href="http://www.ratemyprofessors.com/ShowRatings.jsp?tid=2270301" target="_blank">1 reviews</a>
+						
+					</td>
+					<!-- Status -->
+					<td class="center aligned">
+						<div class="item">
+							
+							<div class="ui teal basic tiny label">Closed</div>
+							<div class="ui small disabled teal progress" data-value="28" data-total="25">
+								<div class="bar"></div>
+								<div class="label">28 of 25 filled</div>
+							</div>
+						</div>
+					</td>
+					<!-- Schedule -->
+					<td>
+						
+						<div class="ui tiny header">
+								5:00 - 7:00 PM
+							<div class="sub header">
+								Spori 014 | Lecture
+							</div>
+						</div>
+						<div class="ui mini circular labels">
+							<div class="ui label">M</div>
+							<div class="ui label">Tu</div>
+							<div class="ui teal label">W</div>
+							<div class="ui label">Th</div>
+							<div class="ui label">F</div>
+							<div class="ui label">S</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<!-- Code -->
+					<td>
+						<div class="ui header">
+							<i class="grey radio icon"></i>
+							01
+						</div>
+					</td>
+					<!-- Instructor -->
+					<td>
+						
+						<a href="https://web.byui.edu/Directory/Employee/mountsk" class="ui header" target="_blank">
+							Mounts
+							<div class="sub header">
+								Kristie<i class="small linkify icon"></i>
+							</div>
+						</a>
+						
+						
+					</td>
+					<!-- Rating -->
+					<td>
+						
+						
+						<div class="ui rating" data-rating="4" data-max-rating="5"></div>
+						<br/>
+						<a class="header" href="http://www.ratemyprofessors.com/ShowRatings.jsp?tid=1803939" target="_blank">8 reviews</a>
+						
+					</td>
+					<!-- Status -->
+					<td class="center aligned">
+						<div class="item">
+							
+							<div class="ui teal basic tiny label">Closed</div>
+							<div class="ui small disabled teal progress" data-value="26" data-total="25">
+								<div class="bar"></div>
+								<div class="label">26 of 25 filled</div>
+							</div>
+						</div>
+					</td>
+					<!-- Schedule -->
+					<td>
+						
+						<div class="ui tiny header">
+								3:15 - 6:00 PM
+							<div class="sub header">
+								Spori 335 Design Studio | Guided Instruction
+							</div>
+						</div>
+						<div class="ui mini circular labels">
+							<div class="ui label">M</div>
+							<div class="ui teal label">Tu</div>
+							<div class="ui label">W</div>
+							<div class="ui teal label">Th</div>
+							<div class="ui label">F</div>
+							<div class="ui label">S</div>
+						</div>
+						
+						<div class="ui tiny header">
+								Arranged
+							<div class="sub header">
+								Guided Instruction
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<!-- Code -->
+					<td>
+						<div class="ui header">
+							<i class="grey radio icon"></i>
+							02
+						</div>
+					</td>
+					<!-- Instructor -->
+					<td>
+						
+						<a href="https://web.byui.edu/Directory/Employees/NameLastFirst/Howe,Timothy" class="ui header" target="_blank">
+							Howe
+							<div class="sub header">
+								Timothy
+							</div>
+						</a>
+						
+						
+					</td>
+					<!-- Rating -->
+					<td>
+						
+						
+						<a class="header" href="http://www.ratemyprofessors.com/search.jsp?queryoption=HEADER&queryBy=teacherName&schoolName=Brigham+Young+University-Idaho&schoolID=1754&query=Timothy%20Howe" target="_blank">
+							<div class="ui rating" data-rating="0" data-max-rating="5"></div>
+						</a>
+						
+						
+					</td>
+					<!-- Status -->
+					<td class="center aligned">
+						<div class="item">
+							
+							<div class="ui teal basic tiny label">Closed</div>
+							<div class="ui small disabled teal progress" data-value="25" data-total="25">
+								<div class="bar"></div>
+								<div class="label">25 of 25 filled</div>
+							</div>
+						</div>
+					</td>
+					<!-- Schedule -->
+					<td>
+						
+						<div class="ui tiny header">
+								3:15 - 6:00 PM
+							<div class="sub header">
+								Spori 014 | Guided Instruction
+							</div>
+						</div>
+						<div class="ui mini circular labels">
+							<div class="ui label">M</div>
+							<div class="ui teal label">Tu</div>
+							<div class="ui label">W</div>
+							<div class="ui teal label">Th</div>
+							<div class="ui label">F</div>
+							<div class="ui label">S</div>
+						</div>
+						
+						<div class="ui tiny header">
+								Arranged
+							<div class="sub header">
+								Guided Instruction
+							</div>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>

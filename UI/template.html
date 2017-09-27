@@ -1,0 +1,129 @@
+<head>
+	<link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+	<script src="semantic/dist/semantic.min.js"></script>
+	<style>
+		.ui.mini.circular.labels .ui.label{
+			margin-right:0em;
+		}
+		.ui.tiny.header{
+			margin-bottom:.2em;
+		}
+		.ui.teal.basic.tiny.label{
+			margin-bottom:.5em
+		}
+	</style>
+	<script>
+		$(document).ready(function() {
+			$(".rating").rating('disable');
+			$(".progress").progress();
+			$('tr td:first-child').click(function(){
+				var is = [['grey','radio'],['green','checkmark']]
+				var c = this.children[0].children[0].classList
+				var its = c.contains(...is[0])
+				c.remove(...is[+!its])
+				c.add(...is[+its])
+				$(this).closest('tr').toggleClass('positive')
+			})
+		});
+	</script>
+</head>
+
+<body>
+	<div class="ui container">
+		<table class="ui sortable striped selectable single line celled table">
+			<thead>
+				<tr>
+					<th>Section #</th>
+					<th>Instructor</th>
+					<th>Rating</th>
+					<th class="three wide">Status</th>
+					<th>Schedule</th>
+				</tr>
+			</thead>
+			<tbody>
+				{{#each this}}
+				<tr>
+					<!-- Code -->
+					<td>
+						<div class="ui header">
+							<i class="grey radio icon"></i>
+							{{Section}}
+						</div>
+					</td>
+					<!-- Instructor -->
+					<td>
+						{{#each Instructors}}
+						
+						<a href="https://web.byui.edu/Directory/Employee{{#if email}}/{{email}}{{else}}s/NameLastFirst/{{name.last}},{{name.first}}{{/if}}" class="ui header" target="_blank">
+							{{name.last}}
+							<div class="sub header">
+								{{name.first}}{{name.middle}}{{#if email}}<i class="small linkify icon"></i>{{/if}}
+							</div>
+						</a>
+						{{var "isMoreThanOne" "{}>1&&{}==0" ../this.Instructors.length @index}}
+						{{#if isMoreThanOne}}<div class="ui divider"></div>{{/if}}
+						{{/each}}
+					</td>
+					<!-- Rating -->
+					<td>
+						{{#each Instructors}}
+						{{var "isMoreThanOne" "{}>1&&{}==0" ../this.Instructors.length @index}}
+						{{var "numStars" "Math.round({})" avgRating}}
+						{{#if numStars}}
+						<div class="ui rating" data-rating="{{numStars}}" data-max-rating="5"></div>
+						<br/>
+						{{#each accounts}}
+						<a class="header" href="http://www.ratemyprofessors.com/ShowRatings.jsp?tid={{id}}" target="_blank">{{numRatings}} reviews</a>
+						{{/each}}
+						{{else}}
+						<a class="header" href="http://www.ratemyprofessors.com/search.jsp?queryoption=HEADER&queryBy=teacherName&schoolName=Brigham+Young+University-Idaho&schoolID=1754&query={{name.first}}%20{{name.last}}" target="_blank">
+							<div class="ui rating" data-rating="0" data-max-rating="5"></div>
+						</a>
+						{{#if isMoreThanOne}}<br/><br/>{{/if}}
+						{{/if}}
+						{{#if isMoreThanOne}}<div class="ui divider"></div>{{/if}}
+						{{/each}}
+					</td>
+					<!-- Status -->
+					<td class="center aligned">
+						<div class="item">
+							{{var "isOpen" "{}=='Open'||{}=='Reopened'" Status Status}}
+							{{#unless isOpen}}
+							<div class="ui teal basic tiny label">{{Status}}</div>
+							{{/unless}}
+							<div class="ui small {{#unless isOpen}}disabled {{/unless}}teal progress" data-value="{{Seats.filled}}" data-total="{{Seats.total}}">
+								<div class="bar"></div>
+								<div class="label">{{Seats.filled}} of {{Seats.total}} filled</div>
+							</div>
+						</div>
+					</td>
+					<!-- Schedule -->
+					<td>
+						{{#each Schedules}}
+						{{var "isOnline" "{}=='0:00 - 0:00 AM'" time}}
+						<div class="ui tiny header">
+							{{#if isOnline}}
+								{{location}}
+							{{else}}
+								{{time}}
+							{{/if}}
+							<div class="sub header">
+								{{#unless isOnline}}{{location}} | {{/unless}}{{method}}
+							</div>
+						</div>
+						{{#unless isOnline}}
+						<div class="ui mini circular labels">
+							{{#each days}}
+							<div class="ui {{#if this}}teal {{/if}}label">{{eval "['M','Tu','W','Th','F','S'][{}]" @index}}</div>
+							{{/each}}
+						</div>
+						{{/unless}}
+						{{/each}}
+					</td>
+				</tr>
+				{{/each}}
+			</tbody>
+		</table>
+	</div>
+</body>

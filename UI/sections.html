@@ -1,0 +1,184 @@
+<head>
+	<link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+	<script src="semantic/dist/semantic.min.js"></script>
+	<style>
+		.ui.mini.circular.labels .ui.label {
+			margin-right: 0em;
+		}
+		
+		.ui.tiny.header {
+			margin-bottom: .2em;
+		}
+		
+		.ui.teal.basic.tiny.label {
+			margin-bottom: .5em
+		}
+
+	</style>
+	<script>
+		$(document).ready(function() {
+			$(".rating").rating('disable');
+			$(".progress").progress();
+			$('tr td:first-child').click(function(){
+				var is = [['grey','radio'],['green','checkmark']]
+				var c = this.children[0].children[0].classList
+				var its = c.contains(...is[0])
+				c.remove(...is[+!its])
+				c.add(...is[+its])
+				$(this).closest('tr').toggleClass('positive')
+			})
+		});
+	</script>
+</head>
+
+<body>
+	<div class="ui grid container">
+		<div class="twelve wide column">
+			<table class="ui sortable striped selectable single line celled table">
+				<thead>
+					<tr>
+						<th>Section #</th>
+						<th>Instructor</th>
+						<th>Rating</th>
+						<th class="three wide">Filled Status</th>
+						<th>Schedule</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="positive">
+						<!-- Code -->
+						<td>
+							<div class="ui header">
+								<i class="green checkmark icon"></i>
+								<!--							<i class="grey radio icon"></i>-->
+								<div class="content">01</div>
+							</div>
+						</td>
+						<!-- Instructor -->
+						<td>
+							<a href="#" class="ui header">
+                            Clarke
+                            <div class="sub header">
+                                Robert Donald
+                            </div>
+                        </a>
+						</td>
+						<!-- Rating -->
+						<td>
+							<div class="ui rating" data-rating="4" data-max-rating="5"></div>
+							<br/>
+							<a class="header" href="#">12 reviews</a>
+						</td>
+						<!-- Status -->
+						<td class="center aligned">
+							<div class="item">
+								<!--							<div class="ui teal basic tiny label">3 on waitlist</div>-->
+								<div class="ui small teal progress" data-value="21" data-total="35">
+									<div class="bar"></div>
+									<div class="label">21 of 35</div>
+								</div>
+							</div>
+						</td>
+						<!-- Schedule -->
+						<td>
+							<div class="ui tiny header">
+								9:00 - 10:00am
+								<div class="sub header">
+									STC 344
+								</div>
+							</div>
+							<div class="ui mini circular labels">
+								<div class="ui teal label">M</div>
+								<div class="ui label">T</div>
+								<div class="ui teal label">W</div>
+								<div class="ui label">R</div>
+								<div class="ui label">F</div>
+								<div class="ui label">S</div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<!-- Code -->
+						<td>
+							<div class="ui header">
+								<!--							<i class="green checkmark icon"></i>-->
+								<i class="grey radio icon"></i>
+								<div class="content">02</div>
+							</div>
+						</td>
+						<!-- Instructor -->
+						<td>
+							<a href="#" class="ui header">
+                            Earl
+                            <div class="sub header">
+                                Jason Scott <i class="linkify icon"></i>
+                            </div>
+                        </a>
+						</td>
+						<!-- Rating -->
+						<td>
+							<a class="header" href="#">
+								<div class="ui rating" data-rating="3" data-max-rating="5"></div>
+								<br/>
+								27 reviews
+							</a>
+						</td>
+						<!-- Status -->
+						<td class="center aligned">
+							<div class="item">
+								<div class="ui teal basic tiny label">3 on waitlist</div>
+								<div class="ui small teal disabled progress" data-value="35" data-total="35">
+									<div class="bar"></div>
+									<div class="label">37 of 35 filled</div>
+								</div>
+							</div>
+						</td>
+						<!-- Schedule -->
+						<td>
+							<div class="ui tiny header">
+								10:15 - 11:15am
+								<div class="sub header">
+									Smith 383
+								</div>
+							</div>
+							<div class="ui mini circular labels">
+								<div class="ui label">M</div>
+								<div class="ui teal label">T</div>
+								<div class="ui label">W</div>
+								<div class="ui teal label">R</div>
+								<div class="ui label">F</div>
+								<div class="ui label">S</div>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="four wide column">
+			<div class="segment"></div>
+		</div>
+	</div>
+</body>
+
+<!--
+{
+    "Code": "ACCTG100-01",
+    "Credits": "2.0",
+    "FilledStatus": "13 on Waitlist",
+    "Instructors": ["Clarke, Robert Donald"],
+    "OpenSeats": "0/35",
+    "Schedules": [{
+        "days": ["M", null, "W", null, null, null],
+        "endDate": "12/15/2017",
+        "endTime": "10:00AM",
+        "location": "Smith 383 Accounting Lab",
+        "method": "Lecture",
+        "startDate": "09/11/2017",
+        "startTime": "9:00AM"
+    }],
+    "SubProgram": "DAY",
+    "Title": "Introduction to Accounting"
+}
+https://web.byui.edu/Directory/Employee/clarker.jpg
+-->
