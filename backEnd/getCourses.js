@@ -12,7 +12,7 @@ got(baseURL+'/public/catalogs/current')
 	.then(res => {
 		res = JSON.parse(res.body)
 		return new Promise((resolve,reject) => {
-			async.mapLimit(res.slice(0,50),50,
+			async.mapLimit(res.slice(100,150),50,
 				function(course,cb){
 					got(baseURL+'/course/'+catalogID+'/'+course.pid)
 						.then(res => {
@@ -41,6 +41,6 @@ got(baseURL+'/public/catalogs/current')
 	.then(courses => {
 		// turn into a map
 		courses = courses.reduce((obj,c) => {obj[c.code] = (()=>{delete c.code; return c})();return obj},{})
-		fs.writeFileSync('courseList.json',JSON.stringify(courses))
+		fs.writeFileSync('courses.json',JSON.stringify(courses))
 	})
 	.catch(console.error)
