@@ -1,0 +1,22 @@
+{{#each sub}}
+<div class="link item">
+  {{#unless course}}
+  <div class="ui horizontal small teal label">{{credits}}</div>
+  <a class="title"><i class="dropdown icon"></i><b>{{header}}</b></a>
+  <div class="content">
+    <div class="accordian menu">
+      {{#if detail.length}}
+      <div class="item">
+        {{#each detail}}
+        <p>{{this}}</p>
+        {{/each}}
+      </div>
+      {{/if}}
+      {{> module}}
+    </div>
+  </div>
+  {{else}}
+  <span class="courseCredit">{{credits}}</span>{{course}}
+  {{/unless}}
+</div>
+{{/each}}

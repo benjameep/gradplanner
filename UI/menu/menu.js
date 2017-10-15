@@ -1,5 +1,5 @@
 var Handlebars = require('handlebars')
-var sections = require('../SignUpScraper/sections.json').slice(100,150) // only get the first couple for now
+var programs = require('../../backend/programs.json')
 var fs = require('fs')
 
 Handlebars.registerHelper({
@@ -18,9 +18,14 @@ Handlebars.registerHelper({
 		var split = string.split('{}')
 		var expr = split.slice(1).reduce((a,s,i) => a+JSON.stringify(vars[i]==undefined?'':vars[i])+s,split[0])
 		return eval(`with(this){${expr}}`)
-	}
+	},
+  credits: function(){
+    return this.credits[0]+(this.credits[1]!=this.credits[0]?" - "+this.credits[1]:"")
+  }
 })
 
-var template = Handlebars.compile(fs.readFileSync('template.html','utf-8'))
+Handlebars.registerPartial('module',fs.readFileSync('module.hbs','utf-8'))
 
-fs.writeFileSync('dynamic.html',template(sections))
+var template = Handlebars.compile(fs.readFileSync('menu.hbs','utf-8'))
+
+fs.writeFileSync('menu.html',template(programs['371']))

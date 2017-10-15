@@ -1,0 +1,220 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="../semantics-ui/semantic.min.css">
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <script src="../semantics-ui/semantic.min.js"></script>
+  <script src="../../backend/listOfPrograms.json"></script>
+  <style>
+    .courseCredit {
+      float: right;
+      font-weight: bold;
+      padding-right: 8px;
+    }
+
+    .ui.vertical.menu .menu .item {
+      font-size: 10px;
+      padding-left: 1em;
+      margin: 0px;
+    }
+
+    .ui.vertical.menu .menu .item .title {
+      font-size: 12px
+    }
+
+  </style>
+<script>
+  $(document).ready(() => {
+    $('.ui.accordion').accordion({
+      animateChildren: false,
+      animate: false
+    });
+    $('.ui.search').search({
+      type: 'category',
+      searchFullText: false,
+      apiSettings: {
+        response: function(settings) {
+          return {
+            results: programList
+              .filter(n => n.title.toUpperCase().includes(settings.urlData.query.toUpperCase()))
+              .reduce((obj, n) => {
+                obj[n.type] = obj[n.type] || {
+                  name: n.type.match(/^[\w :]+/),
+                  results: []
+                }
+                obj[n.type].results.push(n) 
+                return obj
+              }, {})
+          }
+        }
+      }
+    })
+  })
+</script>
+</head>
+
+<body>
+  <div class="ui vertical fluid accordion pointing text menu">
+    <div class="item">
+      <h3 class="ui teal header">Business Management<span class="courseCredit">60 - 62</span></h3>
+    </div>
+    <div class="link item">
+      <div class="ui horizontal small teal label">17</div>
+      <a class="title"><i class="dropdown icon"></i><b>Foundations</b></a>
+      <div class="content">
+        <div class="accordian menu">
+          <div class="link item">
+            <span class="courseCredit">0 - 1</span>FND - AAS
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="link item">
+      <div class="ui horizontal small teal label">42 - 44</div>
+      <a class="title"><i class="dropdown icon"></i><b>Core Courses</b></a>
+      <div class="content">
+        <div class="accordian menu">
+          <div class="link item">
+            <div class="ui horizontal small teal label">23 - 25</div>
+            <a class="title"><i class="dropdown icon"></i><b>Group A</b></a>
+            <div class="content">
+              <div class="accordian menu">
+                <div class="link item">
+                  <span class="courseCredit">3</span>ACCTG 201
+                </div>
+                <div class="link item">
+                  <span class="courseCredit">3</span>ACCTG 202
+                </div>
+                <div class="link item">
+                  <span class="courseCredit">1</span>B 100
+                </div>
+                <div class="link item">
+                  <span class="courseCredit">3</span>B 211
+                </div>
+                <div class="link item">
+                  <span class="courseCredit">3</span>B 215
+                </div>
+                <div class="link item">
+                  <span class="courseCredit">1 - 3</span>B 298R
+                </div>
+                <div class="link item">
+                  <span class="courseCredit">3</span>B 361
+                </div>
+                <div class="link item">
+                  <span class="courseCredit">3</span>ECON 150
+                </div>
+                <div class="link item">
+                  <span class="courseCredit">3</span>MATH 221A
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="link item">
+            <div class="ui horizontal small teal label">9</div>
+            <a class="title"><i class="dropdown icon"></i><b>Group B</b></a>
+            <div class="content">
+              <div class="accordian menu">
+                <div class="link item">
+                  <div class="ui horizontal small teal label">9</div>
+                  <a class="title"><i class="dropdown icon"></i><b>Option A</b></a>
+                  <div class="content">
+                    <div class="accordian menu">
+                      <div class="link item">
+                        <span class="courseCredit">3</span>B 301
+                      </div>
+                      <div class="link item">
+                        <span class="courseCredit">3</span>B 321
+                      </div>
+                      <div class="link item">
+                        <span class="courseCredit">3</span>B 341
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="link item">
+                  <div class="ui horizontal small teal label">9</div>
+                  <a class="title"><i class="dropdown icon"></i><b>Option B</b></a>
+                  <div class="content">
+                    <div class="accordian menu">
+                      <div class="link item">
+                        <span class="courseCredit">3</span>B 302
+                      </div>
+                      <div class="link item">
+                        <span class="courseCredit">3</span>B 322
+                      </div>
+                      <div class="link item">
+                        <span class="courseCredit">3</span>B 342
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="link item">
+            <div class="ui horizontal small teal label">10</div>
+            <a class="title"><i class="dropdown icon"></i><b>Group C</b></a>
+            <div class="content">
+              <div class="accordian menu">
+                <div class="link item">
+                  <span class="courseCredit">3</span>ACCTG 180
+                </div>
+                <div class="link item">
+                  <span class="courseCredit">2</span>ACCTG 205
+                </div>
+                <div class="link item">
+                  <span class="courseCredit">2</span>AGBUS 180B
+                </div>
+                <div class="link item">
+                  <span class="courseCredit">3</span>B 120
+                </div>
+                <div class="link item">
+                  <span class="courseCredit">3</span>B 183
+                </div>
+                <div class="link item">
+                  <span class="courseCredit">3</span>B 250
+                </div>
+                <div class="link item">
+                  <span class="courseCredit">3</span>B 275
+                </div>
+                <div class="link item">
+                  <span class="courseCredit">3</span>B 283
+                </div>
+                <div class="link item">
+                  <span class="courseCredit">3</span>B 383
+                </div>
+                <div class="link item">
+                  <span class="courseCredit">3</span>CIT 110
+                </div>
+                <div class="link item">
+                  <span class="courseCredit">3</span>COMM 150
+                </div>
+                <div class="link item">
+                  <span class="courseCredit">2</span>COMM 175
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="link item">
+      <div class="ui horizontal small teal label">1</div>
+      <a class="title"><i class="dropdown icon"></i><b>General Elective Credits</b></a>
+      <div class="content">
+        <div class="accordian menu">
+          <div class="item">
+            <p>eligible University credit.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="ui fluid catagory search">
+        <div class="ui transparent fluid left icon input">
+          <input class="prompt" type="text" placeholder="Add Major, Minor, Cluster, or Certificate...">
+          <i class="plus icon"></i>
+        </div>
+        <div class="results"></div>
+      </div>
+    </div>
+  </div>
+</body>

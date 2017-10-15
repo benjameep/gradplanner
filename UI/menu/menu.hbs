@@ -1,0 +1,70 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="../semantics-ui/semantic.min.css">
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <script src="../semantics-ui/semantic.min.js"></script>
+  <script src="../../backend/listOfPrograms.json"></script>
+  <style>
+    .courseCredit {
+      float: right;
+      font-weight: bold;
+      padding-right: 8px;
+    }
+
+    .ui.vertical.menu .menu .item {
+      font-size: 10px;
+      padding-left: 1em;
+      margin: 0px;
+    }
+
+    .ui.vertical.menu .menu .item .title {
+      font-size: 12px
+    }
+
+  </style>
+<script>
+  $(document).ready(() => {
+    $('.ui.accordion').accordion({
+      animateChildren: false,
+      animate: false
+    });
+    $('.ui.search').search({
+      type: 'category',
+      searchFullText: false,
+      apiSettings: {
+        response: function(settings) {
+          return {
+            results: programList
+              .filter(n => n.title.toUpperCase().includes(settings.urlData.query.toUpperCase()))
+              .reduce((obj, n) => {
+                obj[n.type] = obj[n.type] || {
+                  name: n.type.match(/^[\w :]+/),
+                  results: []
+                }
+                obj[n.type].results.push(n) 
+                return obj
+              }, {})
+          }
+        }
+      }
+    })
+  })
+</script>
+</head>
+
+<body>
+  <div class="ui vertical fluid accordion pointing text menu">
+    <div class="item">
+      <h3 class="ui teal header">{{header}}<span class="courseCredit">{{credits}}</span></h3>
+    </div>
+    {{> module}}
+    <div class="item">
+      <div class="ui fluid catagory search">
+        <div class="ui transparent fluid left icon input">
+          <input class="prompt" type="text" placeholder="Add Major, Minor, Cluster, or Certificate...">
+          <i class="plus icon"></i>
+        </div>
+        <div class="results"></div>
+      </div>
+    </div>
+  </div>
+</body>

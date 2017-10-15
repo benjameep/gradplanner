@@ -1,7 +1,7 @@
 <head>
-	<link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+	<link rel="stylesheet" type="text/css" href="semantics-ui/dist/semantic.min.css">
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-	<script src="semantic/dist/semantic.min.js"></script>
+	<script src="semantics-ui/dist/semantic.min.js"></script>
 	<style>
 		.ui.mini.circular.labels .ui.label{
 			margin-right:0em;
@@ -55,7 +55,7 @@
 					<td>
 						{{#each Instructors}}
 						
-						<a href="https://web.byui.edu/Directory/Employee{{#if email}}/{{email}}{{else}}s/NameLastFirst/{{name.last}},{{name.first}}{{/if}}" class="ui header" target="_blank">
+						<a href="https://web.byui.edu/Directory/Employee{{#if email}}/{{email}}{{else}}s/NameLastFirst/{{name.last}}{{/if}}" class="ui header" target="_blank">
 							{{name.last}}
 							<div class="sub header">
 								{{name.first}}{{name.middle}}{{#if email}}<i class="small linkify icon"></i>{{/if}}

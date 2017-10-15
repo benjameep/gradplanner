@@ -13,7 +13,7 @@ Handlebars.registerHelper('var',function(varName, string){
 	var split = string.split('{}')
 	var expr = split.slice(1).reduce((a,s,i) => a+JSON.stringify(vars[i]==undefined?'':vars[i])+s,split[0])
 	try{
-		this[varName] = eval(expr)
+		this[varName] = eval(`with(this){${expr}}`)
 	} catch(e){
 		this[varName] = null
 	}
@@ -25,12 +25,17 @@ Handlebars.registerHelper('eval',function(string){
 	var split = string.split('{}')
 	var expr = split.slice(1).reduce((a,s,i) => a+JSON.stringify(vars[i]==undefined?'':vars[i])+s,split[0])
 	console.log(expr)
-	return eval(expr)
+	return eval(`with(this){${expr}}`)
 })
 
+Handlebars.registerHelper('hi',function(string){
+	return eval(`with(this){${string}}`)
+})
 
 var template = Handlebars.compile(`
-	{{eval "'MTWRFS'[{}]" 0}}
+	{{#each it}}
+	{{hi "a"}}
+	{{/each}}
 `)
 
-console.log(template({it:[1,2,3]}))
+console.log(template({it:[{a:1},{a:2},{a:3}]}))

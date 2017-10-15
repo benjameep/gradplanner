@@ -1,0 +1,365 @@
+<head>
+	<link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+	<script src="semantic/dist/semantic.min.js"></script>
+	<style>
+		.clear{
+			clear:both
+		}
+	</style>
+<script>
+	var CS = {
+		"sub": [
+			{
+			"sub": [{
+				"course": "FND - ENG",
+				"credits": [0, 1]
+			}],
+			"credits": [42, 42],
+			"header": "Foundations"
+		}, 
+			{
+			"sub": [{
+				"sub": [
+					{
+					"course": "CS 124",
+					"credits": [3, 3]
+				}, 
+						{
+					"course": "CS 165",
+					"credits": [3, 3]
+				}, 
+						{
+					"course": "CS 235",
+					"credits": [3, 3]
+				}, 
+						{
+					"course": "ECEN 160",
+					"credits": [3, 3]
+				}],
+				"credits": [12, 12],
+				"header": "Group A"
+			}, 
+					{
+				"sub": [
+					{
+					"course": "CS 213",
+					"credits": [3, 3]
+				}, 
+					{
+					"course": "CS 237",
+					"credits": [2, 2]
+				}, 
+						{
+					"course": "CS 238",
+					"credits": [4, 4]
+				}, 
+						{
+					"course": "CS 246",
+					"credits": [3, 3]
+				}, 
+						{
+					"course": "CS 306",
+					"credits": [3, 3]
+				}, 
+						{
+					"course": "CS 308",
+					"credits": [3, 3]
+				}, 
+						{
+					"course": "CS 345",
+					"credits": [3, 3]
+				}, 
+						{
+					"course": "CS 364",
+					"credits": [4, 4]
+				}, 
+						{
+					"course": "CS 416",
+					"credits": [2, 2]
+				}, 
+						{
+					"course": "CS 432",
+					"credits": [3, 3]
+				}, 
+						{
+					"course": "CS 470",
+					"credits": [3, 3]
+				}, 
+						{
+					"course": "ECEN 324",
+					"credits": [3, 3]
+				}, 
+						{
+					"course": "MATH 330",
+					"credits": [3, 3]
+				}, 
+						{
+					"course": "MATH 341",
+					"credits": [3, 3]
+				}, 
+						{
+					"course": "PH 150",
+					"credits": [1, 1]
+				}],
+				"credits": [43, 43],
+				"header": "Group B"
+			}],
+			"credits": [55, 55],
+			"header": "Core Courses"
+		}, 
+			{
+			"sub": [
+				{
+				"sub": [
+					{
+					"course": "CS 225",
+					"credits": [3, 3]
+				}, 
+					{
+					"course": "CS 312",
+					"credits": [3, 3]
+				}, 
+					{
+					"course": "CS 313",
+					"credits": [3, 3]
+				}, 
+					{
+					"course": "CS 371",
+					"credits": [3, 3]
+				}, 
+					{
+					"course": "CS 450",
+					"credits": [3, 3]
+				}, 
+					{
+					"course": "CS 460",
+					"credits": [3, 3]
+				}, 
+					{
+					"course": "CS 480",
+					"credits": [3, 3]
+				}, 
+					{
+					"course": "CS 490R",
+					"credits": [3, 3]
+				}, 
+					{
+					"course": "ECEN 260",
+					"credits": [3, 3]
+				}, 
+					{
+					"course": "ECEN 361",
+					"credits": [3, 3]
+				}],
+				"credits": [15, 15],
+				"header": "Group A"
+			}, 
+				{
+				"sub": [
+					{
+					"course": "CS 398",
+					"credits": [1, 4]
+				}, 
+					{
+					"course": "CS 498R",
+					"credits": [1, 4]
+				}],
+				"credits": [1, 4],
+				"header": "Group B"
+			}, {
+				"sub": [
+					{
+					"sub": [
+						{
+						"course": "CS 499",
+						"credits": [3, 3]
+					}],
+					"credits": [3, 3],
+					"header": "Option A"
+				}, {
+					"sub": [{
+						"course": "CS 499A",
+						"credits": [2, 2]
+					}, {
+						"course": "CS 499B",
+						"credits": [1, 1]
+					}],
+					"credits": [3, 3],
+					"header": "Option B"
+				}],
+				"credits": [3, 3],
+				"header": "Group C"
+			}],
+			"credits": [19, 22],
+			"header": "Supplemental Courses"
+		}, 
+			{
+			"sub": [],
+			"credits": [4, 4],
+			"header": "General Elective Credits",
+			"detail": ["any eligible University credits."]
+		}],
+		"credits": [120, 123],
+		"header": "Computer Science"
+	}
+</script>
+</head>
+<body>
+	<div class="ui container">
+		<div class="ui doubling celled stackable grid">
+			<div class="row">
+				<div class="column">
+					<h3 class="ui left floated header">Foundations</h3>
+					<h3 class="ui right floated header">0/42</h3>
+					<div class="ui clearing fitted divider"></div>
+				</div>
+			</div>
+			<div class="two column row">
+				<div class="column">
+					<h3 class="ui left floated header">Core Courses</h3>
+					<h3 class="ui right floated header">0/55</h3>
+					<div class="ui clearing fitted divider"></div>
+					<div class="ui two column clear grid">
+						<div class="column">
+							<div class="ui selection list">
+								<div class="item">
+									CS 100
+									<div class="right floated content">3</div>
+								</div>
+								<div class="item">
+										<h5 class="ui left floated header">Group A</h5>
+										<h5 class="ui right floated header">0/12</h5>
+										<div class="subheader clear" style="padding-top:0.3em">Take within your first two semesters</div>
+										<div class="ui selection list">
+											<div class="item">
+												<div class="right floated content">3</div>
+			<!--									<i class="check green circle outline icon"></i>-->
+												<div class="content">
+													CS 124
+												</div>
+											</div>
+											<div class="item">
+												CS 165
+												<div class="right floated content">3</div>
+											</div>
+											<div class="item">
+												CS 235
+												<div class="right floated content">3</div>
+											</div>
+											<div class="item">
+												ECEN 160
+												<div class="right floated content">3</div>
+											</div>
+										</div>
+								</div>
+							</div>
+						</div>
+						<div class="column">
+							<div class="ui selection list">
+								<div class="item">
+									<h5 class="ui left floated header">Group B</h5>
+									<h5 class="ui right floated header">0/43</h5>
+									<div class="ui selection list">
+										<div class="item">CS 213<div class="right floated content">3</div></div>
+										<div class="item">CS 237<div class="right floated content">2</div></div>
+										<div class="item">CS 238<div class="right floated content">4</div></div>
+										<div class="item">CS 246<div class="right floated content">3</div></div>
+										<div class="item">CS 306<div class="right floated content">3</div></div>
+										<div class="item">CS 308<div class="right floated content">3</div></div>
+										<div class="item">CS 345<div class="right floated content">3</div></div>
+										<div class="item">CS 364<div class="right floated content">4</div></div>
+										<div class="item">CS 416<div class="right floated content">2</div></div>
+										<div class="item">CS 432<div class="right floated content">3</div></div>
+										<div class="item">CS 470<div class="right floated content">3</div></div>
+										<div class="item">ECEN 324<div class="right floated content">3</div></div>
+										<div class="item">MATH 330<div class="right floated content">3</div></div>
+										<div class="item">MATH 341<div class="right floated content">3</div></div>
+										<div class="item">PH 150<div class="right floated content">1</div></div>
+									</div>
+								</div>
+							</div>							
+						</div>
+					</div>
+				</div>
+				<div class="column">
+					<div class="column">
+						<h3 class="ui left floated header">Supplemental Courses</h3>
+						<h3 class="ui right floated header">0/19-22</h3>
+						<div class="ui clearing fitted divider"></div>
+						<div class="ui two column stackable clear grid">
+							<div class="column">
+								<div class="ui selection list">
+									<div class="item">
+										<h5 class="ui left floated header">Group A</h5>
+										<h5 class="ui right floated header">0/15</h5>
+										<div class="ui selection list">
+												<div class="item">CS 225<div class="right floated content">3</div></div>
+												<div class="item">CS 312<div class="right floated content">3</div></div>
+												<div class="item">CS 313<div class="right floated content">3</div></div>
+												<div class="item">CS 371<div class="right floated content">3</div></div>
+												<div class="item">CS 450<div class="right floated content">3</div></div>
+												<div class="item">CS 460<div class="right floated content">3</div></div>
+												<div class="item">CS 480<div class="right floated content">3</div></div>
+												<div class="item">CS 490R<div class="right floated content">3</div></div>
+												<div class="item">ECEN 260<div class="right floated content">3</div></div>
+												<div class="item">ECEN 361<div class="right floated content">3</div></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="column">
+								<div class="ui selection list">
+									<div class="item">
+										<h5 class="ui left floated header">Group B</h5>
+										<h5 class="ui right floated header">0/1-4</h5>
+<!--										<div class="ui clearing fitted divider"></div>-->
+										<div class="ui selection list">
+												<div class="item">CS 398<div class="right floated content">1 - 4</div></div>
+												<div class="item">CS 498R<div class="right floated content">1 - 4</div></div>
+										</div>
+									</div>
+									<div class="item">
+										<h5 class="ui left floated header">Group C</h5>
+										<h5 class="ui right floated header">0/3</h5>
+<!--										<div class="ui clearing fitted divider"></div>-->
+										<div class="ui one column clear grid">
+											<div class="column">
+												<div class="ui selection list">
+													<div class="item">
+														<h5 class="ui left floated header">Option A</h5>
+														<h5 class="ui right floated header">0/3</h5>
+														<div class="ui selection list">
+															<div class="item">CS 499<div class="right floated content">3</div></div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="column">
+												<div class="ui selection list">
+													<div class="item">
+														<h5 class="ui left floated header">Option B</h5>
+														<h5 class="ui right floated header">0/3</h5>
+														<div class="ui selection list">
+															<div class="item">CS 499A<div class="right floated content">2</div></div>
+															<div class="item">CS 499B<div class="right floated content">1</div></div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="column">
+						<h3 class="ui left floated header">General Elective Credits</h3>
+						<h3 class="ui right floated header">0/4</h3>
+						<div class="ui clearing fitted divider"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>

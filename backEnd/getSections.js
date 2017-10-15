@@ -1,9 +1,9 @@
 var Nightmare = require('night-map')(require('nightmare'))
 var fs = require('fs')
-var rmpTeachers = require('../rmp-api/teachers.json')
 var auth = JSON.parse(fs.readFileSync('auth.json','utf-8'))
 var req = require('request')
 var cheerio = require('cheerio')
+var nameMatcher = require('./nameMatcher.js')
 
 function getEmails(callback){
 	req('https://web.byui.edu/Directory/Employees/NameLastFirst/,',(err,res,body) => {
@@ -43,12 +43,11 @@ function main() {
                     var c = $(row).children().get().map(n => $(n))
 					var seats = c[5].text().trim().split('/')
 					var code = c[1].text().trim().split('-')
-					var teachers = c[4].find('li').get().map(n => n.innerHTML.trim().split(/,|\s+/g))
+					var teachers = c[4].find('li').get().map(n => n.innerHTML.trim().split(/,\s|\s/))
                     return {
                         Course: code[0],
 						Section: code[1],
-                        Title: c[2].text().trim(),
-                        Instructors: teachers.map(name => ({first:name[2],last:name[0],middle:name[1]})),
+                        Instructors: teachers.map(name => ({last:name[0],first:name[1],middle:name[2]})),
                         Seats: {
 							filled:seats[1] - seats[0],
 							total:+seats[1]
@@ -72,15 +71,19 @@ function main() {
         )
         .end()
         .then(data => {
-			// Need to add my teacher info
-			getEmails(emails => {
-				data.forEach(section => {
-					section.Instructors = section.Instructors.map(name => {
-						var full = name.first+" "+name.last
-						return Object.assign({name:name,email:emails[full]},rmpTeachers[full])
-					})
-				})
-				fs.writeFileSync('sections.json',JSON.stringify(data))
+			// This will play with our data, changing the teachers to just a string that references the teachers.json
+			nameMatcher.run(data,sections => {
+				// change into an object of objects of arrays
+				var all = sections.reduce((obj,sec) => {
+					var id = sec.Course.replace(/\s+/g,'')
+					delete sec.Course // Ain't need this anymore
+					obj[id] = obj[id] || {teachers:[],sections:[]}
+					obj[id].sections.push(sec)
+					// Add the teachers it doesn't already have
+					obj[id].teachers.push(...sec.Instructors.filter(t => !obj[id].teachers.includes(t)))
+					return obj
+				},{})
+				fs.writeFileSync('sections.json',JSON.stringify(all))
 			})
 		})
 }

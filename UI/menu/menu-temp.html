@@ -1,0 +1,405 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="../semantic/dist/semantic.min.css">
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <script src="../semantic/dist/semantic.min.js"></script>
+  <script src="../../backend/listOfPrograms.json"></script>
+  <style>
+    .courseCredit {
+      float: right;
+      font-weight: bold;
+      padding-right: 8px;
+    }
+
+    .ui.vertical.menu .menu .item {
+      font-size: 10px;
+      padding-left: 1em;
+      margin: 0px;
+    }
+
+    .ui.vertical.menu .menu .item .title {
+      font-size: 12px
+    }
+
+  </style>
+<script>
+  $(document).ready(() => {
+    $('.ui.accordion').accordion({
+      animateChildren: false,
+      animate: false
+    });
+    $('.ui.search').search({
+      type: 'category',
+      searchFullText: false,
+      apiSettings: {
+        response: function(settings) {
+          return {
+            results: programList
+              .filter(n => n.title.toUpperCase().includes(settings.urlData.query.toUpperCase()))
+              .reduce((obj, n) => {
+                obj[n.type] = obj[n.type] || {
+                  name: n.type.match(/^[\w :]+/),
+                  results: []
+                }
+                obj[n.type].results.push(n) 
+                return obj
+              }, {})
+          }
+        }
+      }
+    })
+  })
+</script>
+</head>
+
+<body>
+  <div class="ui vertical fluid accordion pointing text menu">
+    <div class="item">
+      <h3 class="ui teal header">Foundations</h3>
+    </div>
+    <!--    <div class="item">-->
+    <!--      <div class="ui horizontal small teal label">42</div>-->
+    <!--      <a class="title"><i class="dropdown icon"></i><b>Foundations for Engineering Degrees</b></a>-->
+    <!--      <div class="content">-->
+    <!--        <div class="accordian menu">-->
+    <div class="item">
+      <div class="ui horizontal small teal label">14</div>
+      <a class="title"><i class="dropdown icon"></i>
+              <b>Eternal Truths</b></a>
+      <div class="content">
+        <div class="accordian menu">
+          <div class="item">
+            <p>Complete the Cornerstone and Elective Religion requirements listed below:</p>
+          </div>
+          <div class="item">
+            <div class="ui horizontal small teal label">8</div>
+            <a class="title"><i class="dropdown icon"></i>
+                    <b>Cornerstone Courses</b></a>
+            <div class="content">
+              <a class="item"><span class="courseCredit">2</span>FDREL 200</a>
+              <a class="item"><span class="courseCredit">2</span>FDREL 225</a>
+              <a class="item"><span class="courseCredit">2</span>FDREL 250</a>
+              <a class="item"><span class="courseCredit">2</span>FDREL 275</a>
+            </div>
+          </div>
+          <div class="item">
+            <div class="ui horizontal small teal label">6</div>
+            <a class="title"><i class="dropdown icon"></i>
+                    <b>Other Religion Courses</b></a>
+            <div class="content">
+              <a class="item"><span class="courseCredit">2</span>FDREL 100</a>
+              <a class="item"><span class="courseCredit">2</span>FDREL 121</a>
+              <a class="item"><span class="courseCredit">2</span>FDREL 122</a>
+              <a class="item"><span class="courseCredit">2</span>FDREL 130</a>
+              <a class="item"><span class="courseCredit">1 - 3</span>FDREL 190</a>
+              <a class="item"><span class="courseCredit">2</span>FDREL 211</a>
+              <a class="item"><span class="courseCredit">2</span>FDREL 212</a>
+              <a class="item"><span class="courseCredit">2</span>FDREL 215</a>
+              <a class="item"><span class="courseCredit">2</span>FDREL 234</a>
+              <a class="item"><span class="courseCredit">2</span>FDREL 235</a>
+              <a class="item"><span class="courseCredit">2</span>FDREL 261</a>
+              <a class="item"><span class="courseCredit">2</span>FDREL 301</a>
+              <a class="item"><span class="courseCredit">2</span>FDREL 302</a>
+              <a class="item"><span class="courseCredit">2</span>FDREL 324</a>
+              <a class="item"><span class="courseCredit">2</span>FDREL 325</a>
+              <a class="item"><span class="courseCredit">2</span>FDREL 327</a>
+              <a class="item"><span class="courseCredit">2</span>FDREL 333</a>
+              <a class="item"><span class="courseCredit">2</span>FDREL 341</a>
+              <a class="item"><span class="courseCredit">2</span>FDREL 342</a>
+              <a class="item"><span class="courseCredit">2</span>FDREL 343</a>
+              <a class="item"><span class="courseCredit">2</span>FDREL 345</a>
+              <a class="item"><span class="courseCredit">2</span>FDREL 351</a>
+              <a class="item"><span class="courseCredit">2</span>FDREL 352</a>
+              <a class="item"><span class="courseCredit">2</span>FDREL 390R</a>
+              <a class="item"><span class="courseCredit">2</span>FDREL 397</a>
+              <a class="item"><span class="courseCredit">2</span>FDREL 404</a>
+              <a class="item"><span class="courseCredit">2</span>FDREL 431</a>
+              <a class="item"><span class="courseCredit">2</span>FDREL 471</a>
+              <a class="item"><span class="courseCredit">2</span>FDREL 475</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="ui horizontal small teal label">10-15</div>
+      <a class="title"><i class="dropdown icon"></i>
+              <b>Academic Fundamentals</b></a>
+      <div class="content">
+        <div class="accordian menu">
+          <div class="item">
+            <p>Complete the Reading, Writing, & Critical Thinking, Advanced Research Writing, and Quantitative Reasoning requirements listed below:</p>
+          </div>
+          <div class="item">
+            <div class="ui horizontal small teal label">3</div>
+            <a class="title"><i class="dropdown icon"></i>
+                    <b>Reading, Writing, & Critical Thinking</b></a>
+            <div class="content">
+              <a class="item"><span class="courseCredit">3</span>FDENG 101</a>
+            </div>
+          </div>
+          <div class="item">
+            <div class="ui horizontal small teal label">3</div>
+            <a class="title"><i class="dropdown icon"></i>
+                    <b>Advanced Research Writing</b></a>
+            <div class="content">
+              <div class="accordian menu">
+                <div class="item">
+                  <div class="ui horizontal small teal label">3</div>
+                  <a class="title"><i class="dropdown icon"></i>
+                          <b>Option A</b></a>
+                  <div class="content">
+                    <a class="item"><span class="courseCredit">3</span>FDENG 301</a>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="ui horizontal small teal label">3</div>
+                  <a class="title"><i class="dropdown icon"></i>
+                          <b>Option B</b></a>
+                  <div class="content">
+                    <a class="item"><span class="courseCredit">3</span>B 320</a>
+                    <a class="item"><span class="courseCredit">3</span>GEOL 316</a>
+                    <a class="item"><span class="courseCredit">3</span>HUM 305</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="ui horizontal small teal label">4-9</div>
+            <a class="title"><i class="dropdown icon"></i>
+                      <b>Quantitative Reasoning</b></a>
+            <div class="content">
+              <div class="item">
+                <div class="ui horizontal small teal label">4</div>
+                <a class="title"><i class="dropdown icon"></i>
+                        <b>Option A</b></a>
+                <div class="content">
+                  <a class="item"><span class="courseCredit">4</span>FDMAT 112</a>
+                </div>
+              </div>
+              <div class="item">
+                <div class="ui horizontal small teal label">9</div>
+                <a class="title"><i class="dropdown icon"></i>
+                        <b>Option B</b></a>
+                <div class="content">
+                  <a class="item"><span class="courseCredit">4</span>FDMAT 112</a>
+                  <a class="item"><span class="courseCredit">5</span>MATH 109</a>
+                </div>
+              </div>
+              <div class="item">
+                <div class="ui horizontal small teal label">9</div>
+                <a class="title"><i class="dropdown icon"></i>
+                        <b>Option C</b></a>
+                <div class="content">
+                  <a class="item"><span class="courseCredit">4</span>FDMAT 112</a>
+                  <a class="item"><span class="courseCredit">3</span>MATH 110X</a>
+                  <a class="item"><span class="courseCredit">2</span>MATH 111</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="ui horizontal small teal label">9</div>
+      <a class="title"><i class="dropdown icon"></i>
+              <b>Science</b></a>
+      <div class="content">
+        <div class="accordian menu">
+          <div class="item">
+            <p>Complete the Science Foundations and Issues in the Sciences requirements listed below:</p>
+          </div>
+          <div class="item">
+            <div class="ui horizontal small teal label">2</div>
+            <a class="title"><i class="dropdown icon"></i>
+                    <b>Science Foundations</b></a>
+            <div class="content">
+              <a class="item"><span class="courseCredit">2</span>FDSCI 101</a>
+            </div>
+          </div>
+          <div class="item">
+            <div class="ui horizontal small teal label">7</div>
+            <a class="title"><i class="dropdown icon"></i>
+                    <b>Issues in Science</b></a>
+            <div class="content">
+              <a class="item"><span class="courseCredit">3</span>CHEM 105</a>
+              <a class="item"><span class="courseCredit">1</span>CHEM 105L</a>
+              <a class="item"><span class="courseCredit">3</span>PH 121</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="ui horizontal small teal label">9</div>
+      <a class="title"><i class="dropdown icon"></i>
+              <b>Cultural Awareness</b></a>
+      <div class="content">
+        <div class="accordian menu">
+          <div class="item">
+            <p>Complete the American Foundations and Humanities, International, Literature & World requirements listed below:</p>
+          </div>
+          <div class="item">
+            <div class="ui horizontal small teal label">3</div>
+            <a class="title"><i class="dropdown icon"></i>
+                    <b>American Foundations</b></a>
+            <div class="content">
+              <a class="item"><span class="courseCredit">3</span>FDAMF 101</a>
+              <a class="item"><span class="courseCredit">3</span>FDCIV 101</a>
+            </div>
+          </div>
+          <div class="item">
+            <div class="ui horizontal small teal label">6</div>
+            <a class="title"><i class="dropdown icon"></i><b>Humanities, International, Literature & World</b></a>
+            <div class="content">
+              <div class="accordian menu">
+                <div class="item">
+                  <div class="ui horizontal small teal label">3</div>
+                  <a class="title"><i class="dropdown icon"></i>
+                          <b>Group A</b></a>
+                  <div class="content">
+                    <a class="item"><span class="courseCredit">3</span>FDHUM 110</a>
+                    <a class="item"><span class="courseCredit">3</span>FDWLD 101</a>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="ui horizontal small teal label">3</div>
+                  <a class="title"><i class="dropdown icon"></i>
+                          <b>Group B</b></a>
+                  <div class="content">
+                    <a class="item"><span class="courseCredit">3</span>FDHUM 214</a>
+                    <a class="item"><span class="courseCredit">3</span>FDHUM 299</a>
+                    <a class="item"><span class="courseCredit">3</span>FDINT 211</a>
+                    <a class="item"><span class="courseCredit">3</span>FDINT 212</a>
+                    <a class="item"><span class="courseCredit">3</span>FDINT 215</a>
+                    <a class="item"><span class="courseCredit">3</span>FDINT 299</a>
+                    <a class="item"><span class="courseCredit">3</span>FDLIT 216</a>
+                    <a class="item"><span class="courseCredit">3</span>FDLIT 299</a>
+                    <a class="item"><span class="courseCredit">3</span>FDWLD 201</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--        </div>-->
+    <!--      </div>-->
+    <!--    </div>-->
+    <div class="item">
+      <h3 class="ui teal header">Computer Science</h3>
+    </div>
+    <div class="item">
+      <div class="ui horizontal teal small label">55 / 55</div>
+      <a class="title"><i class="dropdown icon"></i><b>Core Courses</b></a>
+      <div class="content">
+        <div class="accordian menu">
+          <div class="item">
+            <div class="ui horizontal small teal label">12</div>
+            <div class="title">
+              <i class="dropdown icon"></i><b>Group A</b></div>
+            <div class="content">
+              <a class="item"><span class="courseCredit">3</span>CS 124</a>
+              <a class="item"><span class="courseCredit">3</span>CS 165</a>
+              <a class="item"><span class="courseCredit">3</span>CS 235</a>
+              <a class="item"><span class="courseCredit">3</span>ECEN 160</a>
+            </div>
+          </div>
+          <div class="item">
+            <div class="ui horizontal small teal label">43</div>
+            <div class="title">
+              <i class="dropdown icon"></i><b>Group B</b></div>
+            <div class="content">
+              <a class="item"><span class="courseCredit">3</span>CS 213</a>
+              <a class="item"><span class="courseCredit">2</span>CS 237</a>
+              <a class="item"><span class="courseCredit">4</span>CS 238</a>
+              <a class="item"><span class="courseCredit">3</span>CS 246</a>
+              <a class="item"><span class="courseCredit">3</span>CS 306</a>
+              <a class="item"><span class="courseCredit">3</span>CS 308</a>
+              <a class="item"><span class="courseCredit">3</span>CS 345</a>
+              <a class="item"><span class="courseCredit">4</span>CS 364</a>
+              <a class="item"><span class="courseCredit">2</span>CS 416</a>
+              <a class="item"><span class="courseCredit">3</span>CS 432</a>
+              <a class="item"><span class="courseCredit">3</span>CS 470</a>
+              <a class="item"><span class="courseCredit">3</span>ECEN 324</a>
+              <a class="item"><span class="courseCredit">3</span>MATH 330</a>
+              <a class="item"><span class="courseCredit">3</span>MATH 341</a>
+              <a class="item"><span class="courseCredit">1</span>PH 150</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="ui horizontal small teal label">3 / 19-22</div>
+      <a class="title"><i class="dropdown icon"></i><b>Supplemental Courses</b></a>
+      <div class="content">
+        <div class="accordian menu">
+          <div class="item">
+            <div class="ui horizontal small teal label">15</div>
+            <div class="title"><i class="dropdown icon"></i>
+              <b>Group A</b></div>
+            <div class="content">
+              <a class="item"><span class="courseCredit">3</span>CS 225</a>
+              <a class="item"><span class="courseCredit">3</span>CS 312</a>
+              <a class="item"><span class="courseCredit">3</span>CS 313</a>
+              <a class="item"><span class="courseCredit">3</span>CS 371</a>
+              <a class="item"><span class="courseCredit">3</span>CS 450</a>
+              <a class="item"><span class="courseCredit">3</span>CS 460</a>
+              <a class="item"><span class="courseCredit">3</span>CS 480</a>
+              <a class="item"><span class="courseCredit">3</span>CS 490R</a>
+              <a class="item"><span class="courseCredit">3</span>ECEN 260</a>
+              <a class="item"><span class="courseCredit">3</span>ECEN 361</a>
+            </div>
+          </div>
+          <div class="item">
+            <div class="ui horizontal small teal label">1-4</div>
+            <div class="title"><i class="dropdown icon"></i>
+              <b>Group B</b></div>
+            <div class="content">
+              <a class="item"><span class="courseCredit">1 - 4</span>CS 398</a>
+              <a class="item"><span class="courseCredit">1 - 4</span>CS 498R</a>
+            </div>
+          </div>
+          <div class="item">
+            <div class="ui horizontal small teal label">3</div>
+            <a class="title"><i class="dropdown icon"></i>
+              <b>Group C</b></a>
+            <div class="content">
+              <div class="accordian menu">
+                <div class="item">
+                  <div class="ui horizontal small teal label">3</div>
+                  <div class="title"><i class="dropdown icon"></i>
+                    <b>Option A</b></div>
+                  <div class="content">
+                    <a class="item"><span class="courseCredit">3</span>CS 499</a>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="ui horizontal small teal label">3</div>
+                  <div class="title"><i class="dropdown icon"></i>
+                    <b>Option B</b></div>
+                  <div class="content">
+                    <a class="item"><span class="courseCredit">2</span>CS 499A</a>
+                    <a class="item"><span class="courseCredit">1</span>CS 499B</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="ui fluid catagory search">
+        <div class="ui transparent fluid left icon input">
+          <input class="prompt" type="text" placeholder="Add Major, Minor, Cluster, or Certificate...">
+          <i class="plus icon"></i>
+        </div>
+        <div class="results"></div>
+      </div>
+    </div>
+  </div>
+</body>
